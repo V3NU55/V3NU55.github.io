@@ -341,7 +341,7 @@
   <div class="authors">Anonymous Authors</div>
   <div class="hero-links">
     <a href="#abstract" class="btn-pill btn-dark"><i class="fa-solid fa-file-lines"></i> Paper (under review)</a>
-    <a href="https://github.com/V3NU55/VENUSS_code" class="btn-pill"><i class="fa-brands fa-github"></i> Code</a>
+    <a href="https://github.com/V3NU55/VENUSS_code" class="btn-pill btn-dark"><i class="fa-brands fa-github"></i> Code</a>
   </div>
 </div>
 
@@ -405,6 +405,13 @@
   <div class="figure">
     <img src="assets/phrase_graph_new.png" alt="CoVLA Category Visualization">
     <div class="caption">Visualization of all CoVLA textual descriptions automatically categorized by VENUSS. The framework identified seven categories: motion types (blue), velocity descriptors (yellow), directional behaviors (orange), acceleration patterns (purple), following behavior (dark green), traffic light conditions (light red), and road curvature detection (gray).</div>
+  </div>
+
+  <h3>Human Evaluation</h3>
+
+  <div class="figure">
+    <img src="assets/web_app_simple.png" alt="Human evaluation web application" style="max-width:700px;">
+    <div class="caption">Simplified example of the human evaluation questionnaire. The interface presents sequential driving images with temporal intervals, and seven multiple-choice questions for the corresponding categories. The final answer key concatenates the responses for comparison with ground truth annotations.</div>
   </div>
 
   <h3>Semantic Mapping Example</h3>
@@ -544,11 +551,6 @@ Answer key:  A  A  B  A  C  B  B
 <section id="human-eval">
   <h2>Human Evaluation</h2>
 
-  <div class="figure">
-    <img src="assets/web_app_simple.png" alt="Human evaluation web application" style="max-width:700px;">
-    <div class="caption">Simplified example of the human evaluation questionnaire. The interface presents sequential driving images with temporal intervals, and seven multiple-choice questions for the corresponding categories. The final answer key concatenates the responses for comparison with ground truth annotations.</div>
-  </div>
-
   <h3>Evaluation Protocol</h3>
   <p>The web application supports three presentation modes for human evaluators:</p>
   <ol>
@@ -642,7 +644,7 @@ in the format: 1) [letter] 2) [letter] ... 7) [letter]</code></pre>
   <details>
     <summary>User Prompt &mdash; Honda Scenes Dataset</summary>
     <div class="details-content">
-      <p>Honda Scenes uses 16 environmental categories instead of CoVLA's 7 behavioral categories.</p>
+      <p>Honda Scenes uses 16 environmental categories instead of CoVLA's 7 behavioral categories, covering road type, weather, surface conditions, ambient lighting, and various infrastructure elements.</p>
       <p class="code-label">User Message</p>
 <pre><code>You are viewing a [rows]x[cols] grid of images showing a driving scenario captured
 at [interval] ms intervals. The images are arranged chronologically from left to
@@ -652,24 +654,62 @@ driving scenario.
 Based on the sequential images, please answer the following questions about the
 driving environment:
 
-1.  Road Type: What type of road is this?
-2.  Weather: What are the weather conditions?
-3.  Road Surface: What is the road surface condition?
-4.  Ambient Lighting: What is the ambient lighting?
-5.  Intersection: Is there an intersection?
-6.  Bridge: Is there a bridge?
-7.  Tunnel: Is there a tunnel?
-8.  Construction Zone: Is there a construction zone?
-9.  Parking Area: Is there a parking area?
-10. Residential Area: Is this a residential area?
-11. Commercial Area: Is this a commercial area?
-12. Highway: Is this a highway?
-13. Rural Road: Is this a rural road?
-14. Urban Road: Is this an urban road?
-15. Vehicle Position: What lane is the ego vehicle in?
-16. Number of Lanes: How many lanes are visible?
+1.  Road Type: What type of road environment is this?
+    Options: (A) Local  (B) Highway  (C) Ramp  (D) Urban  (E) Rural  (F) NDA
 
-Please provide your analysis and then include a short answer key at the end.</code></pre>
+2.  Weather: What are the current weather conditions?
+    Options: (A) Sunny  (B) Cloudy  (C) Rain  (D) Snow  (E) Fog  (F) Hail  (G) NDA
+
+3.  Road Surface: What is the road surface condition?
+    Options: (A) Dry  (B) Wet  (C) Icy  (D) Snow  (E) NDA
+
+4.  Ambient Lighting: What is the lighting/time of day?
+    Options: (A) Day  (B) Dawn/Dusk  (C) Night  (D) NDA
+
+5.  Intersection: Is there an intersection present in this scene?
+    Options: (A) Yes, 3-way  (B) Yes, 4-way  (C) Yes, 5+ way  (D) No intersection  (E) NDA
+
+6.  Traffic Control: What type of traffic control exists at the intersection (if present)?
+    Options: (A) Traffic lights  (B) Stop sign  (C) No signal  (D) No intersection  (E) NDA
+
+7.  Merge/Branch: Is there a merge or branch scenario visible?
+    Options: (A) Merge - gore on left  (B) Merge - gore on right
+             (C) Branch - gore on left  (D) Branch - gore on right
+             (E) No merge/branch  (F) NDA
+
+8.  Bridge/Overpass: Is there a bridge or overpass in this scene?
+    Options: (A) Yes - overhead bridge  (B) Yes - under overpass  (C) No  (D) NDA
+
+9.  Railway Crossing: Is there a railway crossing visible?
+    Options: (A) Yes  (B) No  (C) NDA
+
+10. Tunnel: Is there a tunnel in this scene?
+    Options: (A) Yes  (B) No  (C) NDA
+
+11. Construction Zone: Is there a construction zone visible?
+    Options: (A) Yes  (B) No  (C) NDA
+
+12. Zebra Crossing: Is there a zebra crossing (marked pedestrian crossing) visible?
+    Options: (A) Yes  (B) No  (C) NDA
+
+13. Regular Crosswalk: Is there a regular crosswalk visible?
+    Options: (A) Yes  (B) No  (C) NDA
+
+14. Driveway: Is there a driveway entrance/exit visible?
+    Options: (A) Yes  (B) No  (C) NDA
+
+15. Primary Scenario: What is the primary road scenario in this scene?
+    Options: (A) Intersection  (B) Merge/Branch  (C) Railway crossing
+             (D) Tunnel  (E) Bridge/Overpass  (F) Construction zone
+             (G) Zebra crossing  (H) Regular road  (I) NDA
+
+16. Vehicle Position: What is the vehicle's position relative to the primary scenario?
+    Options: (A) Approaching  (B) Entering/At  (C) Passing/Exiting
+             (D) No special scenario  (E) NDA
+
+Please provide your analysis and then include a short answer key at the end
+in the format: 1) [letter] 2) [letter] ... 16) [letter]</code></pre>
+      <p><strong>Note:</strong> NDA = No Definite Answer, selected when the category cannot be determined from the available visual information.</p>
     </div>
   </details>
 </section>
