@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VENUSS: VLM Evaluation oN Understanding Sequential Scenes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: #fff;
+      padding: 4rem 2rem 2.5rem;
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.3rem;
+    }
+    .hero .acronym {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+    .hero .authors {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+    .hero .affiliations {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+    .hero-links {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Pill buttons */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.3rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: background 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-dark {
+      background: #363636;
+      color: #fff;
+    }
+    .btn-dark:hover {
+      background: #222;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .btn-disabled {
+      background: #d5d5d5;
+      color: #888;
+      cursor: default;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 2.5rem 0;
+    }
+    section + section {
+      border-top: 1px solid #eee;
+    }
+
+    /* ===== Typography ===== */
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin: 1.5rem 0 0.6rem;
+    }
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #444;
+      margin: 1rem 0 0.4rem;
+    }
+    p { margin-bottom: 0.75rem; }
+    ul, ol { margin: 0.5rem 0 0.8rem 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    a { color: #4a6fa5; }
+
+    /* ===== Stat cards ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .stat-card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4a6fa5;
+    }
+    .stat-card .label {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.2rem;
+    }
+
+    /* ===== Figures ===== */
+    .figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .figure img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .figure figcaption, .figure .caption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.5rem;
+      font-style: italic;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== Code blocks ===== */
+    pre {
+      background: #f5f5f5;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin: 0.8rem 0;
+    }
+    code {
+      font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+      font-size: 0.8rem;
+    }
+    p code, li code {
+      background: #f5f5f5;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.82em;
+    }
+    .code-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ===== Collapsible ===== */
+    details {
+      margin: 0.8rem 0;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 0.8rem 1rem;
+      background: #fafafa;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.15s;
+    }
+    summary:hover { background: #f2f2f2; }
+    summary::before {
+      content: '\25B6';
+      font-size: 0.65rem;
+      color: #888;
+      transition: transform 0.2s;
+    }
+    details[open] > summary::before {
+      transform: rotate(90deg);
+    }
+    summary::-webkit-details-marker { display: none; }
+    details > .details-content {
+      padding: 1rem;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    /* ===== Tables ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.82rem;
+    }
+    th, td {
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #e8e8e8;
+      text-align: center;
+    }
+    th {
+      background: #f5f5f5;
+      color: #333;
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: #fafafa; }
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    /* ===== Supplementary badge ===== */
+    .supp-badge {
+      display: inline-block;
+      background: #f0ad4e;
+      color: white;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      vertical-align: middle;
+      margin-right: 0.3rem;
+    }
+
+    /* ===== Difficulty badges ===== */
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-easy { background: #d4edda; color: #155724; }
+    .badge-moderate { background: #fff3cd; color: #856404; }
+    .badge-hard { background: #f8d7da; color: #721c24; }
+
+    /* ===== Citation ===== */
+    .citation-block {
+      background: #f5f5f5;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover { background: #f5f5f5; }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      margin-top: 1rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 2.5rem 1.5rem 2rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero-links { flex-direction: column; align-items: center; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .container { padding: 0 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- HERO -->
+<!-- ============================================================ -->
+<div class="hero">
+  <h1>VENUSS</h1>
+  <div class="acronym">VLM Evaluation oN Understanding Sequential Scenes</div>
+  <div class="authors">Anonymous Authors</div>
+  <div class="hero-links">
+    <a href="#abstract" class="btn-pill btn-dark"><i class="fa-solid fa-file-lines"></i> Paper (under review)</a>
+    <span class="btn-pill btn-disabled"><i class="fa-brands fa-github"></i> Code (coming soon)</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- ABSTRACT -->
+<!-- ============================================================ -->
+<section id="abstract">
+  <h2>Abstract</h2>
+  <p>Vision-Language Models (VLMs) are increasingly proposed for autonomous driving tasks, yet their performance on sequential driving scenes remains poorly characterized, particularly regarding how input configurations affect their capabilities.</p>
+  <p>We introduce <strong>VENUSS</strong>, a framework for systematic sensitivity analysis of VLM performance on sequential driving scenes, establishing baselines for future research. Building upon existing datasets, VENUSS extracts temporal sequences from driving videos and generates structured evaluations across custom categories.</p>
+  <p>By comparing 25+ existing VLMs across 2,600+ scenarios, we reveal how even top models achieve only <strong>57% accuracy</strong>, not matching human performance in similar constraints (65%) and exposing significant capability gaps. Our analysis shows that VLMs excel with static object detection but struggle with understanding the vehicle dynamics and temporal relations.</p>
+  <p>VENUSS offers the first systematic sensitivity analysis of VLMs focused on how input image configurations &mdash; resolution, frame count, temporal intervals, spatial layouts, and presentation modes &mdash; affect performance on sequential driving scenes.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- FRAMEWORK OVERVIEW -->
+<!-- ============================================================ -->
+<section id="framework">
+  <h2>Framework Overview</h2>
+  <div class="figure">
+    <img src="assets/venuss_framework_overview.png" alt="VENUSS Framework Overview">
+    <div class="caption">VENUSS framework overview. Starting from driving datasets, VENUSS generates structured evaluation data with controlled variations in image count, timing, resolution, layout, and presentation mode. It evaluates both VLMs and humans on identical tasks across custom categories, identifies optimal input configurations per model, and establishes performance baselines.</div>
+  </div>
+
+  <h3>Four Modules</h3>
+  <div class="card-grid">
+    <div class="stat-card">
+      <div class="number" style="font-size:1.3rem;">M1</div>
+      <div class="label"><strong>Dataset Generation</strong><br>Extract temporal sequences from driving videos with controlled variations</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" style="font-size:1.3rem;">M2</div>
+      <div class="label"><strong>Annotation System</strong><br>Transform textual descriptions into structured, fine-grained labels</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" style="font-size:1.3rem;">M3</div>
+      <div class="label"><strong>Human Baselines</strong><br>Web application for human evaluation with collage, GIF, and video modes</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" style="font-size:1.3rem;">M4</div>
+      <div class="label"><strong>Prompt Design</strong><br>Standardized prompts for fair VLM comparison across configurations</div>
+    </div>
+  </div>
+
+  <h3>Dataset-Agnostic Design</h3>
+  <p>VENUSS is designed to be dataset-agnostic. Categories are automatically extracted from each dataset's textual descriptions. We release VENUSS with configurations for two datasets:</p>
+  <ul>
+    <li><strong>CoVLA</strong>: 7 <em>behavioral</em> categories (motion, direction, speed, following, acceleration, traffic lights, curvature) &mdash; extracted from natural language captions.</li>
+    <li><strong>Honda Scenes</strong>: 16 <em>environmental</em> categories (road type, weather, surface, ambient lighting, infrastructure) &mdash; derived from categorical CSV annotations.</li>
+  </ul>
+  <p>Adding a new dataset requires modifying only 3 files: dataset configuration, annotation parser, and evaluation questions.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- ANNOTATION SYSTEM -->
+<!-- ============================================================ -->
+<section id="annotations">
+  <h2>Annotation Categories</h2>
+  <div class="figure">
+    <img src="assets/phrase_graph_new.png" alt="CoVLA Category Visualization">
+    <div class="caption">Visualization of all CoVLA textual descriptions automatically categorized by VENUSS. The framework identified seven categories: motion types (blue), velocity descriptors (yellow), directional behaviors (orange), acceleration patterns (purple), following behavior (dark green), traffic light conditions (light red), and road curvature detection (gray).</div>
+  </div>
+
+  <h3>Semantic Mapping Example</h3>
+  <p>The annotation system transforms natural language descriptions into structured answer keys. For example:</p>
+  <pre><code>Caption:  "The ego vehicle is moving straight at a high speed"
+
+Answer key: A A B A C B B
+             | |  |  | |  | |
+             | |  |  | |  | +-- Curve: No curve (B)
+             | |  |  | |  +--- Traffic Light: No traffic light (B)
+             | |  |  | +------ Acceleration: No acceleration (C)
+             | |  |  +-------- Following: Not following (A)
+             | |  +----------- Speed: High speed (B)
+             | +-------------- Direction: Straight (A)
+             +---------------- Motion: Moving (A)</code></pre>
+</section>
+
+<!-- ============================================================ -->
+<!-- KEY RESULTS -->
+<!-- ============================================================ -->
+<section id="results">
+  <h2>Key Results</h2>
+  <div class="card-grid">
+    <div class="stat-card">
+      <div class="number">57%</div>
+      <div class="label">Best VLM Accuracy<br>(Qwen-VL-Max)</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">65%</div>
+      <div class="label">Human Baseline<br>(GIF mode)</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">25+</div>
+      <div class="label">VLMs<br>Evaluated</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">2,600+</div>
+      <div class="label">Scenarios<br>Tested</div>
+    </div>
+  </div>
+
+  <h3>Overall Performance</h3>
+  <p>Model family hierarchy (accuracy): <strong>Qwen (52.8%)</strong> > Gemini (51.2%) > Claude (50.5%) > GPT (49.4%). Qwen architectures demonstrate both superior accuracy and consistency (&sigma;=0.032) compared to GPT models (&sigma;=0.082), indicating 2.56&times; better reliability.</p>
+  <p>GPT-4o-Mini outperforms the flagship GPT-4o by 13 percentage points (55% vs 42%) due to GPT-4o's frequent refusals on driving-related content. Gemini-2.5-Pro was excluded entirely (90%+ refusal rate).</p>
+
+  <h3>Task Difficulty Hierarchy</h3>
+  <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Difficulty</th>
+        <th>F1 Range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="text-align:left;">Vehicle Motion Detection</td><td><span class="badge badge-easy">Easy</span></td><td>0.73 &ndash; 0.91</td></tr>
+      <tr><td style="text-align:left;">Traffic Light Detection</td><td><span class="badge badge-moderate">Moderate</span></td><td>0.61 &ndash; 0.90</td></tr>
+      <tr><td style="text-align:left;">Curved Road Detection</td><td><span class="badge badge-moderate">Moderate-Hard</span></td><td>0.40 &ndash; 0.73</td></tr>
+      <tr><td style="text-align:left;">Car Following Behavior</td><td><span class="badge badge-hard">Hard</span></td><td>0.29 &ndash; 0.64</td></tr>
+      <tr><td style="text-align:left;">Vehicle Direction Analysis</td><td><span class="badge badge-hard">Hard</span></td><td>0.08 &ndash; 0.33</td></tr>
+      <tr><td style="text-align:left;">Vehicle Speed Assessment</td><td><span class="badge badge-hard">Very Hard</span></td><td>0.12 &ndash; 0.32</td></tr>
+      <tr><td style="text-align:left;">Vehicle Acceleration Detection</td><td><span class="badge badge-hard">Hardest</span></td><td>0.07 &ndash; 0.25</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONFIGURATION ANALYSIS -->
+<!-- ============================================================ -->
+<section id="configuration">
+  <h2>Configuration Analysis</h2>
+  <p>Our systematic evaluation across <strong>270 unique configuration combinations</strong> reveals a <strong>48.2% relative improvement potential</strong> through systematic configuration tuning.</p>
+
+  <div class="figure">
+    <img src="assets/concatenated_4plots_1x4_resolution_time_numimages_presentation.png" alt="Configuration Analysis">
+    <div class="caption">Performance analysis across 4 dimensions. (a) Performance by resolution level, (b) Performance by time interval, (c) Performance by number of images, and (d) Performance by presentation mode. Horizontal lines show human baselines: green for collage-based, blue for GIF-based evaluation. Box plots summarize VLM performance distributions.</div>
+  </div>
+
+  <h3>Key Findings</h3>
+
+  <details>
+    <summary>Resolution: 720p is optimal</summary>
+    <div class="details-content">
+      <p>720p (960&times;540) achieves <strong>95% of peak performance</strong> while maintaining computational tractability. Lower resolutions lose critical visual details needed for scene interpretation, while higher resolutions add pixel density without new semantic information for these tasks.</p>
+      <div class="figure">
+        <img src="assets/resolution_comparison_with_gif_humans_box.png" alt="Resolution comparison" style="max-width:600px;">
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Temporal Intervals: 1000ms intervals are best</summary>
+    <div class="details-content">
+      <p>Optimal performance at <strong>1000ms intervals (0.5918 accuracy)</strong> versus 200ms intervals (0.5068 accuracy), a <strong>14.4% accuracy penalty</strong> for shorter intervals. Longer intervals capture more visually distinct frames, making scene changes more apparent.</p>
+      <div class="figure">
+        <img src="assets/time_interval_comparison_with_gif_humans_box.png" alt="Time interval comparison" style="max-width:600px;">
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Frame Count: 3-4 frames optimal, plateaus beyond</summary>
+    <div class="details-content">
+      <p>Increasing frames from 1 to 3-4 yields a <strong>31.5% improvement</strong>, but performance plateaus beyond 4 frames. Current VLMs cannot effectively integrate information across long sequences, likely due to attention mechanisms that struggle to track temporal changes across many frames.</p>
+      <div class="figure">
+        <img src="assets/num_images_comparison_with_gif_humans_box.png" alt="Number of images comparison" style="max-width:600px;">
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Presentation Mode: Collage outperforms sequential by 6%</summary>
+    <div class="details-content">
+      <p>Spatial co-location allows models to compare frames simultaneously within a single image, rather than relying on context memory across separate inputs.</p>
+      <div class="figure">
+        <img src="assets/presentation_mode_comparison_with_gif_humans_box.png" alt="Presentation mode comparison" style="max-width:600px;">
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Spatial Layout: Horizontal layouts beat square grids</summary>
+    <div class="details-content">
+      <p>Horizontal layouts (3&times;1, 4&times;1) outperform square grids (p &lt; 0.001, &eta;&sup2; = 0.41). Left-to-right arrangement matches natural temporal flow and avoids ambiguity in reading order.</p>
+      <div class="figure">
+        <img src="assets/grid_format_comparison_with_gif_humans_box.png" alt="Grid format comparison" style="max-width:600px;">
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================ -->
+<!-- HUMAN EVALUATION -->
+<!-- ============================================================ -->
+<section id="human-eval">
+  <h2>Human Evaluation</h2>
+
+  <div class="figure">
+    <img src="assets/web_app_simple.png" alt="Human evaluation web application" style="max-width:700px;">
+    <div class="caption">Simplified example of the human evaluation questionnaire. The interface presents sequential driving images with temporal intervals, and seven multiple-choice questions for the corresponding categories. The final answer key concatenates the responses for comparison with ground truth annotations.</div>
+  </div>
+
+  <h3>Evaluation Protocol</h3>
+  <p>The web application supports three presentation modes for human evaluators:</p>
+  <ol>
+    <li><strong>Image collages</strong> &mdash; matching the VLM input format for direct performance comparison</li>
+    <li><strong>Animated GIFs</strong> &mdash; providing temporal continuity for more intuitive scenario understanding</li>
+    <li><strong>Video playback</strong> &mdash; for annotation verification and data curation</li>
+  </ol>
+  <p>8 evaluators participated: 3 using collages, 5 using GIFs (108 evaluations each). GIF-based evaluations consistently outperformed collage-based (65% vs 56% peak accuracy, +16% relative improvement).</p>
+
+  <h3>Inter-Annotator Agreement (Fleiss' Kappa)</h3>
+  <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>&kappa; GIF (5 raters)</th>
+        <th>&kappa; Collage (3 raters)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="text-align:left;">Motion</td><td>0.595 (Moderate)</td><td>0.465 (Moderate)</td></tr>
+      <tr><td style="text-align:left;">Direction</td><td>0.815 (Almost perfect)</td><td>0.763 (Substantial)</td></tr>
+      <tr><td style="text-align:left;">Speed</td><td>0.672 (Substantial)</td><td>0.516 (Moderate)</td></tr>
+      <tr><td style="text-align:left;">Following</td><td>0.919 (Almost perfect)</td><td>0.907 (Almost perfect)</td></tr>
+      <tr><td style="text-align:left;">Acceleration</td><td>0.432 (Moderate)</td><td>0.248 (Fair)</td></tr>
+      <tr><td style="text-align:left;">Traffic Light</td><td>0.819 (Almost perfect)</td><td>0.788 (Substantial)</td></tr>
+      <tr><td style="text-align:left;">Curve</td><td>0.639 (Substantial)</td><td>0.585 (Moderate)</td></tr>
+      <tr style="font-weight:600; background:#f0f7ff;"><td style="text-align:left;">Overall Mean</td><td>0.699 (Substantial)</td><td>0.610 (Substantial)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Both evaluation modes show substantial agreement. GIF consistently outperforms collage (&kappa; +0.05&ndash;0.18 per category). Categories dependent on temporal cues (speed, motion, acceleration) show the largest improvement from collage to GIF, while spatially-grounded categories (following, traffic light) remain stable.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- SUPPLEMENTARY MATERIAL -->
+<!-- ============================================================ -->
+<section id="supplementary">
+  <h2><span class="supp-badge">SUPPLEMENTARY</span> Prompt Templates</h2>
+  <p>The following sections present the complete prompt templates used for VLM evaluation in VENUSS. These could not be included in the main paper due to space constraints.</p>
+
+  <details>
+    <summary>System Prompt</summary>
+    <div class="details-content">
+      <p class="code-label">System Message</p>
+<pre><code>You are an expert in autonomous driving scenario analysis. You will be shown images
+representing sequential driving scenarios and must classify them according to specific
+categories.</code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>User Prompt &mdash; CoVLA Dataset</summary>
+    <div class="details-content">
+      <p>The user prompt provides context about the image content and task requirements. For each evaluation, models receive:</p>
+      <p class="code-label">User Message</p>
+<pre><code>You are viewing a [rows]x[cols] grid of images showing a driving scenario captured
+at [interval] ms intervals. The images are arranged chronologically from left to
+right, top to bottom. These images are from the ego vehicle's perspective in a
+driving scenario.
+
+Based on the sequential images, please answer the following questions:
+
+1. Motion State: Is the ego vehicle moving, stopping, or stopped?
+   Options: (A) Moving  (B) Stopping  (C) Stopped
+
+2. Direction: What direction is the ego vehicle moving?
+   Options: (A) Straight  (B) Left  (C) Right
+
+3. Speed: What is the ego vehicle's speed?
+   Options: (A) Very High  (B) High  (C) Medium  (D) Low
+
+4. Following: Is the ego vehicle following another vehicle?
+   Options: (A) Not following  (B) Following
+
+5. Acceleration: What is the ego vehicle's acceleration state?
+   Options: (A) Positive acceleration  (B) Negative acceleration  (C) No acceleration
+
+6. Traffic Light: Is there a traffic light visible?
+   Options: (A) Red  (B) No traffic light  (C) Green  (D) Yellow
+
+7. Curve: Is the ego vehicle on a curved road?
+   Options: (A) Curved road  (B) Straight road
+
+Please provide your analysis and then include a short answer key at the end
+in the format: 1) [letter] 2) [letter] ... 7) [letter]</code></pre>
+      <p><strong>Note:</strong> Models generate free-form responses and are free to express themselves. The answer key at the end is parsed for evaluation, enabling reproducible and scalable assessment across 25+ models and 2,600+ scenarios.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>User Prompt &mdash; Honda Scenes Dataset</summary>
+    <div class="details-content">
+      <p>Honda Scenes uses 16 environmental categories instead of CoVLA's 7 behavioral categories.</p>
+      <p class="code-label">User Message</p>
+<pre><code>You are viewing a [rows]x[cols] grid of images showing a driving scenario captured
+at [interval] ms intervals. The images are arranged chronologically from left to
+right, top to bottom. These images are from the ego vehicle's perspective in a
+driving scenario.
+
+Based on the sequential images, please answer the following questions about the
+driving environment:
+
+1.  Road Type: What type of road is this?
+2.  Weather: What are the weather conditions?
+3.  Road Surface: What is the road surface condition?
+4.  Ambient Lighting: What is the ambient lighting?
+5.  Intersection: Is there an intersection?
+6.  Bridge: Is there a bridge?
+7.  Tunnel: Is there a tunnel?
+8.  Construction Zone: Is there a construction zone?
+9.  Parking Area: Is there a parking area?
+10. Residential Area: Is this a residential area?
+11. Commercial Area: Is this a commercial area?
+12. Highway: Is this a highway?
+13. Rural Road: Is this a rural road?
+14. Urban Road: Is this an urban road?
+15. Vehicle Position: What lane is the ego vehicle in?
+16. Number of Lanes: How many lanes are visible?
+
+Please provide your analysis and then include a short answer key at the end.</code></pre>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================ -->
+<!-- FULL RESULTS TABLE -->
+<!-- ============================================================ -->
+<section id="full-results">
+  <h2><span class="supp-badge">SUPPLEMENTARY</span> Full Results Table</h2>
+  <p>Complete performance evaluation for all VLMs and human evaluators. Values are averaged over all tested configurations.</p>
+
+  <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Model / Human</th>
+        <th>Acc.</th>
+        <th>Prec.</th>
+        <th>Rec.</th>
+        <th>F1</th>
+        <th>Mot.</th>
+        <th>Dir.</th>
+        <th>Spd.</th>
+        <th>Fol.</th>
+        <th>Accel.</th>
+        <th>TL</th>
+        <th>Crv.</th>
+        <th>Time (s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#e8f4e8;"><td style="text-align:left;">evaluator-1 (collage)</td><td><u>0.63</u></td><td><u>0.66</u></td><td><u>0.63</u></td><td><u>0.64</u></td><td>0.88</td><td><u>0.56</u></td><td>0.32</td><td>0.62</td><td><b>0.40</b></td><td><b>0.89</b></td><td>0.69</td><td>N/A</td></tr>
+      <tr style="background:#e8f4e8;"><td style="text-align:left;">evaluator-2 (collage)</td><td>0.57</td><td>0.61</td><td>0.57</td><td>0.58</td><td>0.87</td><td>0.50</td><td><u>0.41</u></td><td>0.64</td><td>0.37</td><td>0.76</td><td>0.40</td><td>N/A</td></tr>
+      <tr style="background:#e8f4e8;"><td style="text-align:left;">evaluator-3 (collage)</td><td>0.54</td><td>0.59</td><td>0.54</td><td>0.55</td><td>0.82</td><td>0.27</td><td>0.22</td><td>0.60</td><td>0.27</td><td>0.76</td><td>0.68</td><td>N/A</td></tr>
+      <tr style="background:#dbeafe;"><td style="text-align:left;">evaluator-4 (gif)</td><td><b>0.65</b></td><td><b>0.68</b></td><td><b>0.65</b></td><td><b>0.66</b></td><td><u>0.92</u></td><td>0.42</td><td><b>0.49</b></td><td><b>0.80</b></td><td>0.27</td><td>0.85</td><td><b>0.74</b></td><td>N/A</td></tr>
+      <tr style="background:#dbeafe;"><td style="text-align:left;">evaluator-5 (gif)</td><td>0.63</td><td>0.66</td><td>0.63</td><td>0.64</td><td>0.88</td><td>0.56</td><td>0.32</td><td>0.62</td><td>0.40</td><td><u>0.89</u></td><td>0.69</td><td>N/A</td></tr>
+      <tr style="background:#dbeafe;"><td style="text-align:left;">evaluator-6 (gif)</td><td>0.63</td><td>0.66</td><td>0.63</td><td>0.64</td><td><b>0.93</b></td><td><b>0.58</b></td><td>0.37</td><td><u>0.75</u></td><td>0.30</td><td>0.79</td><td><u>0.72</u></td><td>N/A</td></tr>
+      <tr style="background:#dbeafe;"><td style="text-align:left;">evaluator-7 (gif)</td><td>0.63</td><td>0.66</td><td>0.63</td><td>0.63</td><td>0.91</td><td>0.51</td><td><u>0.45</u></td><td>0.72</td><td><u>0.32</u></td><td>0.83</td><td>0.70</td><td>N/A</td></tr>
+      <tr style="background:#dbeafe;"><td style="text-align:left;">evaluator-8 (gif)</td><td>0.62</td><td>0.64</td><td>0.62</td><td>0.62</td><td>0.91</td><td>0.54</td><td>0.42</td><td>0.72</td><td>0.31</td><td>0.84</td><td>0.62</td><td>N/A</td></tr>
+      <tr><td colspan="13" style="background:#ddd; height:2px; padding:0;"></td></tr>
+      <tr><td style="text-align:left;"><b>qwen-vl-max</b></td><td><b>0.57</b></td><td><u>0.62</u></td><td><b>0.57</b></td><td><b>0.59</b></td><td><u>0.90</u></td><td>0.14</td><td><u>0.31</u></td><td>0.60</td><td>0.12</td><td>0.88</td><td>0.68</td><td>2.4</td></tr>
+      <tr><td style="text-align:left;">claude-3.7-sonnet</td><td>0.55</td><td>0.60</td><td>0.55</td><td><u>0.57</u></td><td>0.88</td><td>0.17</td><td>0.20</td><td>0.59</td><td>0.10</td><td>0.89</td><td>0.64</td><td>2.8</td></tr>
+      <tr><td style="text-align:left;">claude-3.5-sonnet</td><td>0.55</td><td>0.60</td><td>0.55</td><td>0.57</td><td>0.88</td><td>0.19</td><td>0.17</td><td>0.60</td><td>0.09</td><td>0.90</td><td>0.66</td><td>2.6</td></tr>
+      <tr><td style="text-align:left;">gpt-4o-mini</td><td><u>0.55</u></td><td>0.60</td><td><u>0.55</u></td><td>0.56</td><td>0.85</td><td>0.22</td><td>0.15</td><td><b>0.63</b></td><td><b>0.25</b></td><td>0.87</td><td>0.68</td><td>3.0</td></tr>
+      <tr><td style="text-align:left;">qwen-vl-plus</td><td>0.54</td><td>0.61</td><td>0.54</td><td>0.56</td><td>0.85</td><td><b>0.33</b></td><td>0.12</td><td>0.48</td><td>0.08</td><td>0.90</td><td>0.63</td><td><b>1.6</b></td></tr>
+      <tr><td style="text-align:left;">gemini-1.5-flash</td><td>0.54</td><td>0.60</td><td>0.54</td><td>0.56</td><td>0.87</td><td>0.22</td><td>0.14</td><td>0.45</td><td>0.11</td><td>0.88</td><td><u>0.71</u></td><td>2.6</td></tr>
+      <tr><td style="text-align:left;">qwen2.5-vl-7b</td><td>0.54</td><td><b>0.62</b></td><td>0.54</td><td>0.56</td><td>0.82</td><td>0.28</td><td>0.15</td><td>0.47</td><td>0.09</td><td>0.88</td><td>0.64</td><td>2.2</td></tr>
+      <tr><td style="text-align:left;">claude-3-opus</td><td>0.54</td><td>0.59</td><td>0.54</td><td>0.55</td><td><b>0.91</b></td><td>0.08</td><td>0.21</td><td>0.57</td><td>0.08</td><td><b>0.90</b></td><td>0.50</td><td>4.1</td></tr>
+      <tr><td style="text-align:left;">qwen2.5-vl-72b</td><td>0.52</td><td>0.59</td><td>0.52</td><td>0.55</td><td>0.88</td><td>0.17</td><td>0.23</td><td>0.59</td><td>0.10</td><td>0.77</td><td>0.67</td><td>3.7</td></tr>
+      <tr><td style="text-align:left;">gemini-2.0-flash-lite</td><td>0.53</td><td>0.59</td><td>0.53</td><td>0.54</td><td>0.81</td><td>0.26</td><td>0.17</td><td>0.57</td><td>0.15</td><td>0.84</td><td>0.65</td><td>2.8</td></tr>
+      <tr><td style="text-align:left;">claude-opus-4</td><td>0.52</td><td>0.59</td><td>0.52</td><td>0.54</td><td>0.84</td><td>0.15</td><td>0.19</td><td>0.52</td><td>0.09</td><td>0.89</td><td>0.60</td><td>7.1</td></tr>
+      <tr><td style="text-align:left;">gemini-2.0-flash-exp</td><td>0.51</td><td>0.61</td><td>0.51</td><td>0.53</td><td>0.88</td><td>0.26</td><td>0.13</td><td><u>0.60</u></td><td>0.12</td><td>0.72</td><td>0.68</td><td>4.3</td></tr>
+      <tr><td style="text-align:left;">gemini-1.5-pro</td><td>0.50</td><td>0.60</td><td>0.50</td><td>0.53</td><td>0.83</td><td>0.17</td><td>0.16</td><td>0.56</td><td>0.14</td><td>0.84</td><td>0.65</td><td>4.1</td></tr>
+      <tr><td style="text-align:left;">claude-sonnet-4</td><td>0.51</td><td>0.55</td><td>0.51</td><td>0.53</td><td>0.85</td><td>0.11</td><td>0.15</td><td>0.52</td><td>0.08</td><td>0.88</td><td>0.59</td><td>6.1</td></tr>
+      <tr><td style="text-align:left;">gemini-2.0-flash</td><td>0.49</td><td>0.61</td><td>0.49</td><td>0.51</td><td>0.88</td><td>0.25</td><td>0.13</td><td>0.59</td><td>0.13</td><td>0.62</td><td>0.68</td><td>2.8</td></tr>
+      <tr><td style="text-align:left;">qwen2.5-vl-32b</td><td>0.48</td><td>0.58</td><td>0.48</td><td>0.51</td><td>0.82</td><td><u>0.29</u></td><td><b>0.32</b></td><td>0.45</td><td>0.11</td><td>0.80</td><td>0.61</td><td>4.4</td></tr>
+      <tr><td style="text-align:left;">qwen2.5-vl-3b</td><td>0.51</td><td>0.54</td><td>0.51</td><td>0.51</td><td>0.87</td><td>0.21</td><td>0.16</td><td>0.29</td><td>0.07</td><td><u>0.90</u></td><td>0.53</td><td><u>1.9</u></td></tr>
+      <tr><td style="text-align:left;">gemini-1.5-flash-8b</td><td>0.46</td><td>0.58</td><td>0.46</td><td>0.50</td><td>0.85</td><td>0.14</td><td>0.13</td><td>0.51</td><td><u>0.16</u></td><td>0.61</td><td><b>0.73</b></td><td>2.5</td></tr>
+      <tr><td style="text-align:left;">claude-3-sonnet</td><td>0.45</td><td>0.53</td><td>0.45</td><td>0.48</td><td>0.73</td><td>0.11</td><td>0.13</td><td>0.38</td><td>0.08</td><td>0.80</td><td>0.59</td><td>2.6</td></tr>
+      <tr><td style="text-align:left;">gpt-4o</td><td>0.42</td><td>0.60</td><td>0.42</td><td>0.47</td><td>0.73</td><td>0.14</td><td>0.12</td><td>0.54</td><td>0.08</td><td>0.75</td><td>0.63</td><td>3.0</td></tr>
+      <tr><td style="text-align:left;">claude-3.5-haiku</td><td>0.42</td><td>0.55</td><td>0.42</td><td>0.46</td><td>0.78</td><td>0.15</td><td>0.20</td><td>0.49</td><td>0.10</td><td>0.77</td><td>0.59</td><td>3.1</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:0.82rem;color:#888;"><b>Bold</b> = best among VLMs, <u>underline</u> = second best. Green rows = collage human evaluators, blue rows = GIF human evaluators.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- CITATION -->
+<!-- ============================================================ -->
+<section id="citation">
+  <h2>Citation</h2>
+  <p>If you find this work useful, please cite:</p>
+  <div class="citation-block">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('bibtex').innerText).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)})">Copy</button>
+<span id="bibtex">@inproceedings{venuss2026,
+  title={How Well Do Vision-Language Models Understand Sequential Driving Scenes? A Sensitivity Study},
+  author={Anonymous},
+  booktitle={IEEE International Conference on Intelligent Transportation Systems (ITSC)},
+  year={2026}
+}</span>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  VENUSS &mdash; VLM Evaluation oN Understanding Sequential Scenes
+</footer>
+
+</body>
+</html>
