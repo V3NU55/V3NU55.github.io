@@ -390,10 +390,12 @@
   </div>
 
   <h3>Dataset-Agnostic Design</h3>
-  <p>VENUSS is designed to be dataset-agnostic. Categories are automatically extracted from each dataset's textual descriptions. We release VENUSS with configurations for two datasets:</p>
+  <p>VENUSS is designed to be dataset-agnostic. Categories are automatically extracted from each dataset's textual descriptions. We release VENUSS with configurations for four datasets:</p>
   <ul>
     <li><strong>CoVLA</strong>: 7 <em>behavioral</em> categories (motion, direction, speed, following, acceleration, traffic lights, curvature) &mdash; extracted from natural language captions.</li>
     <li><strong>Honda Scenes</strong>: 16 <em>environmental</em> categories (road type, weather, surface, ambient lighting, infrastructure) &mdash; derived from categorical CSV annotations.</li>
+    <li><strong>Waymo Open Dataset</strong>: Multi-sensor driving data with LiDAR and camera annotations &mdash; <em>coming soon</em>.</li>
+    <li><strong>NuScenes</strong>: Multi-sensor urban driving data with 3D object annotations &mdash; <em>coming soon</em>.</li>
   </ul>
   <p>Adding a new dataset requires modifying only 3 files: dataset configuration, annotation parser, and evaluation questions.</p>
 </section>
