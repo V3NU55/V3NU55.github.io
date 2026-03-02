@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VENUSS Human Evaluation Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ===== Pill buttons ===== */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.5rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-dark {
+      background: #363636;
+      color: #fff;
+    }
+    .btn-dark:hover {
+      background: #222;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .btn-dark:disabled {
+      background: #bbb;
+      cursor: default;
+      box-shadow: none;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #363636;
+      border: 2px solid #363636;
+    }
+    .btn-outline:hover {
+      background: #363636;
+      color: #fff;
+    }
+
+    /* ===== Screen Management ===== */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    /* ===== SCREEN 1: Welcome ===== */
+    .welcome {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .welcome h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .welcome .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .welcome .instructions {
+      text-align: left;
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      font-size: 0.92rem;
+    }
+    .welcome .instructions h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: #333;
+    }
+    .welcome .instructions ul {
+      margin: 0.4rem 0 0 1.2rem;
+    }
+    .welcome .instructions li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Mode toggle */
+    .mode-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 2rem;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid #363636;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mode-toggle button {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      background: #fff;
+      color: #363636;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-toggle button.active {
+      background: #363636;
+      color: #fff;
+    }
+
+    /* ===== SCREEN 2: Evaluation ===== */
+    .eval-header {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 1rem;
+    }
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+    }
+    .progress-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #333;
+      white-space: nowrap;
+    }
+    .progress-bar-bg {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* Media display */
+    .media-container {
+      text-align: center;
+      margin: 1rem 0;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 0.8rem;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .media-container img {
+      max-width: 100%;
+      max-height: 540px;
+      border-radius: 4px;
+    }
+
+    /* Question grid */
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.8rem;
+      margin: 1.2rem 0;
+    }
+    @media (max-width: 900px) {
+      .question-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .question-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .question-col {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .question-col.answered {
+      border-color: #22c55e;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+    }
+    .question-col.focused {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+    }
+    .q-header {
+      background: #f5f5f5;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #555;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .q-header .q-num {
+      background: #363636;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+    .q-header .q-label {
+      flex: 1;
+      margin-left: 0.4rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .q-options {
+      padding: 0.4rem;
+    }
+
+    /* Option cards */
+    .option-card {
+      display: block;
+      padding: 0.4rem 0.5rem;
+      margin-bottom: 0.25rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      transition: background 0.1s;
+      border: 1px solid transparent;
+      user-select: none;
+    }
+    .option-card:hover {
+      background: #f0f0ff;
+    }
+    .option-card.selected {
+      background: #e8f5e9;
+      border-color: #22c55e;
+      font-weight: 600;
+    }
+    .option-card input {
+      display: none;
+    }
+    .option-letter {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+      border-radius: 50%;
+      background: #eee;
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-right: 0.3rem;
+      vertical-align: middle;
+    }
+    .option-card.selected .option-letter {
+      background: #22c55e;
+      color: #fff;
+    }
+
+    /* Nav */
+    .eval-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 2rem;
+    }
+    .keyboard-hint {
+      font-size: 0.78rem;
+      color: #999;
+    }
+    .keyboard-hint kbd {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 0.72rem;
+    }
+
+    /* ===== SCREEN 3: Results ===== */
+    .results {
+      text-align: center;
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .results h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    .results .big-score {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #6366f1;
+      margin: 1rem 0 0.2rem;
+    }
+    .results .score-detail {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    /* Per-category table */
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .results-table th, .results-table td {
+      padding: 0.55rem 0.8rem;
+      border: 1px solid #e8e8e8;
+      text-align: center;
+    }
+    .results-table th {
+      background: #f5f5f5;
+      font-weight: 600;
+      color: #333;
+    }
+    .results-table tr:nth-child(even) { background: #fafafa; }
+
+    .comparison-box {
+      background: #f0f0ff;
+      border: 1px solid #d0d0f0;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    .comparison-box h4 {
+      font-size: 0.95rem;
+      color: #4338ca;
+      margin-bottom: 0.5rem;
+    }
+    .comparison-box p {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      color: #666;
+      text-decoration: none;
+      padding: 0.8rem 0;
+    }
+    .back-link:hover { color: #333; }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 4rem;
+      color: #999;
+    }
+    .loading .spinner {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border: 3px solid #eee;
+      border-top-color: #6366f1;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+    }
+    footer a { color: #666; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- SCREEN 1: Welcome -->
+<!-- ============================================================ -->
+<div id="screen-welcome" class="screen active">
+  <div class="welcome">
+    <p><a href="../" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to VENUSS</a></p>
+    <h1>Human Evaluation Demo</h1>
+    <p class="subtitle">Experience the VENUSS evaluation task. Classify 20 driving scenarios, then compare your accuracy against VLMs and human evaluators.</p>
+
+    <div class="instructions">
+      <h3><i class="fa-solid fa-circle-info"></i> How it works</h3>
+      <ul>
+        <li>You'll see <strong>20 driving scenarios</strong> from the CoVLA dataset, each shown as a sequence of 4 frames.</li>
+        <li>For each scenario, answer <strong>7 multiple-choice questions</strong> about the ego vehicle's behavior.</li>
+        <li>Choose between <strong>Collage</strong> (static image grid) or <strong>GIF</strong> (animated) mode below.</li>
+        <li>At the end, see how your accuracy compares to published baselines.</li>
+      </ul>
+      <h3 style="margin-top:1rem;"><i class="fa-solid fa-keyboard"></i> Keyboard shortcuts</h3>
+      <ul>
+        <li><strong>1&ndash;7</strong> &mdash; Jump to question</li>
+        <li><strong>A&ndash;E</strong> &mdash; Select option for the focused question</li>
+        <li><strong>Enter</strong> &mdash; Next scenario (when all questions answered)</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:600; margin-bottom:0.5rem;">Presentation mode</p>
+    <div class="mode-toggle">
+      <button id="mode-collage" class="active" onclick="setMode('collage')"><i class="fa-solid fa-images"></i> Collage</button>
+      <button id="mode-gif" onclick="setMode('gif')"><i class="fa-solid fa-film"></i> GIF</button>
+    </div>
+
+    <button class="btn-pill btn-dark" style="font-size:1rem; padding:0.7rem 2.5rem;" onclick="startEval()">
+      <i class="fa-solid fa-play"></i> Start Evaluation
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCREEN 2: Evaluation -->
+<!-- ============================================================ -->
+<div id="screen-eval" class="screen">
+  <div class="container">
+    <div class="eval-header">
+      <div class="progress-row">
+        <span class="progress-label" id="progress-label">Scenario 1 of 20</span>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar" style="width:5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-container" id="media-container">
+      <div class="loading"><div class="spinner"></div><br>Loading...</div>
+    </div>
+
+    <div class="question-grid" id="question-grid"></div>
+
+    <div class="eval-nav">
+      <div class="keyboard-hint">
+        <kbd>1</kbd>-<kbd>7</kbd> focus question &nbsp;
+        <kbd>A</kbd>-<kbd>E</kbd> select option &nbsp;
+        <kbd>Enter</kbd> next
+      </div>
+      <button class="btn-pill btn-dark" id="btn-next" disabled onclick="nextScenario()">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCREEN 3: Results -->
+<!-- ============================================================ -->
+<div id="screen-results" class="screen">
+  <div class="results">
+    <p><a href="../" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to VENUSS</a></p>
+    <h2>Your Results</h2>
+    <div class="big-score" id="result-pct">0%</div>
+    <div class="score-detail" id="result-detail">0 / 140 correct</div>
+
+    <table class="results-table" id="results-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Correct</th>
+          <th>Total</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="results-tbody"></tbody>
+    </table>
+
+    <div class="comparison-box">
+      <h4><i class="fa-solid fa-chart-bar"></i> How do you compare?</h4>
+      <p><strong>Human evaluators (collage):</strong> 54&ndash;63% accuracy</p>
+      <p><strong>Human evaluators (GIF):</strong> 62&ndash;65% accuracy</p>
+      <p><strong>Best VLM (Qwen-VL-Max):</strong> 57% accuracy</p>
+      <p style="font-size:0.82rem; color:#888; margin-top:0.5rem;">Note: Published baselines were evaluated on all 108 scenarios. Your results are from a 20-scenario subset.</p>
+    </div>
+
+    <button class="btn-pill btn-dark" style="font-size:1rem; padding:0.7rem 2rem; margin-right:0.5rem;" onclick="tryAgain()">
+      <i class="fa-solid fa-rotate-right"></i> Try Again
+    </button>
+    <a href="../" class="btn-pill btn-outline" style="font-size:1rem; padding:0.7rem 2rem;">
+      <i class="fa-solid fa-arrow-left"></i> Back to VENUSS
+    </a>
+  </div>
+</div>
+
+<footer>
+  VENUSS &mdash; VLM Evaluation oN Understanding Sequential Scenes
+</footer>
+
+<!-- ============================================================ -->
+<!-- JavaScript -->
+<!-- ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ── State ──
+  const state = {
+    mode: 'collage',         // 'collage' or 'gif'
+    scenarios: [],           // loaded from JSON
+    order: [],               // shuffled indices
+    currentIdx: 0,           // position in order[]
+    answers: [],             // answers[scenarioPos][questionIdx] = 'A','B',...
+    focusedQ: 0,             // 0-indexed focused question column
+  };
+
+  const CATEGORY_LABELS = ['Motion', 'Direction', 'Speed', 'Following', 'Acceleration', 'Traffic Light', 'Curve'];
+  const CATEGORY_SHORT = ['Motion', 'Direction', 'Speed', 'Follow', 'Accel.', 'Tr. Light', 'Curve'];
+
+  // ── Utilities ──
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // ── Mode Toggle ──
+  window.setMode = function(mode) {
+    state.mode = mode;
+    document.getElementById('mode-collage').classList.toggle('active', mode === 'collage');
+    document.getElementById('mode-gif').classList.toggle('active', mode === 'gif');
+  };
+
+  // ── Load Scenarios ──
+  async function loadScenarios() {
+    const resp = await fetch('data/scenarios.json');
+    state.scenarios = await resp.json();
+  }
+
+  // ── Start ──
+  window.startEval = async function() {
+    if (state.scenarios.length === 0) {
+      showScreen('screen-eval');
+      await loadScenarios();
+    }
+    state.order = shuffle(state.scenarios.map((_, i) => i));
+    state.currentIdx = 0;
+    state.answers = state.order.map(() => new Array(7).fill(null));
+    state.focusedQ = 0;
+    showScreen('screen-eval');
+    renderScenario();
+  };
+
+  // ── Render Scenario ──
+  function renderScenario() {
+    const pos = state.currentIdx;
+    const scenarioIdx = state.order[pos];
+    const scenario = state.scenarios[scenarioIdx];
+    const total = state.order.length;
+
+    // Progress
+    document.getElementById('progress-label').textContent = `Scenario ${pos + 1} of ${total}`;
+    document.getElementById('progress-bar').style.width = `${((pos + 1) / total) * 100}%`;
+
+    // Media
+    const mc = document.getElementById('media-container');
+    if (state.mode === 'collage') {
+      mc.innerHTML = `<img src="${scenario.collage}" alt="Scenario collage" draggable="false">`;
+    } else {
+      mc.innerHTML = `<img src="${scenario.gif}" alt="Scenario GIF" draggable="false">`;
+    }
+
+    // Questions
+    renderQuestions(scenario, pos);
+
+    // Next button
+    updateNextButton();
+  }
+
+  function renderQuestions(scenario, pos) {
+    const grid = document.getElementById('question-grid');
+    grid.innerHTML = '';
+
+    scenario.questions.forEach((q, qi) => {
+      const col = document.createElement('div');
+      col.className = 'question-col' + (state.answers[pos][qi] ? ' answered' : '') + (qi === state.focusedQ ? ' focused' : '');
+      col.dataset.qi = qi;
+
+      // Header
+      const header = document.createElement('div');
+      header.className = 'q-header';
+      header.innerHTML = `<span class="q-num">${qi + 1}</span><span class="q-label">${CATEGORY_SHORT[qi]}</span>`;
+      col.appendChild(header);
+
+      // Options
+      const opts = document.createElement('div');
+      opts.className = 'q-options';
+
+      q.options.forEach((optText, oi) => {
+        const letter = String.fromCharCode(65 + oi); // A, B, C...
+        const label = document.createElement('label');
+        label.className = 'option-card' + (state.answers[pos][qi] === letter ? ' selected' : '');
+
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = `q${qi}`;
+        input.value = letter;
+        if (state.answers[pos][qi] === letter) input.checked = true;
+
+        label.appendChild(input);
+
+        // Extract just the text after "X) "
+        const displayText = optText.replace(/^[A-E]\)\s*/, '');
+        label.innerHTML += `<span class="option-letter">${letter}</span>${displayText}`;
+
+        label.addEventListener('click', () => selectOption(pos, qi, letter));
+        opts.appendChild(label);
+      });
+
+      col.appendChild(opts);
+
+      // Click header to focus
+      header.addEventListener('click', () => focusQuestion(qi));
+
+      grid.appendChild(col);
+    });
+  }
+
+  function selectOption(pos, qi, letter) {
+    state.answers[pos][qi] = letter;
+    state.focusedQ = qi;
+    renderQuestions(state.scenarios[state.order[pos]], pos);
+    updateNextButton();
+  }
+
+  function focusQuestion(qi) {
+    state.focusedQ = qi;
+    // Update focus styling
+    document.querySelectorAll('.question-col').forEach(col => {
+      col.classList.toggle('focused', parseInt(col.dataset.qi) === qi);
+    });
+  }
+
+  function updateNextButton() {
+    const pos = state.currentIdx;
+    const allAnswered = state.answers[pos].every(a => a !== null);
+    const btn = document.getElementById('btn-next');
+    btn.disabled = !allAnswered;
+    btn.innerHTML = (pos < state.order.length - 1)
+      ? 'Next <i class="fa-solid fa-arrow-right"></i>'
+      : 'See Results <i class="fa-solid fa-chart-bar"></i>';
+  }
+
+  // ── Next / Finish ──
+  window.nextScenario = function() {
+    const pos = state.currentIdx;
+    if (state.answers[pos].some(a => a === null)) return;
+
+    if (pos < state.order.length - 1) {
+      state.currentIdx++;
+      state.focusedQ = 0;
+      renderScenario();
+    } else {
+      showResults();
+    }
+  };
+
+  // ── Results ──
+  function showResults() {
+    let totalCorrect = 0;
+    const categoryCorrect = new Array(7).fill(0);
+    const categoryTotal = new Array(7).fill(0);
+
+    state.order.forEach((scenarioIdx, pos) => {
+      const scenario = state.scenarios[scenarioIdx];
+      const answerKey = scenario.answer_key;
+
+      for (let qi = 0; qi < 7; qi++) {
+        categoryTotal[qi]++;
+        if (state.answers[pos][qi] === answerKey[qi]) {
+          categoryCorrect[qi]++;
+          totalCorrect++;
+        }
+      }
+    });
+
+    const totalQuestions = state.order.length * 7;
+    const pct = Math.round((totalCorrect / totalQuestions) * 100);
+
+    document.getElementById('result-pct').textContent = `${pct}%`;
+    document.getElementById('result-detail').textContent = `${totalCorrect} / ${totalQuestions} correct`;
+
+    // Per-category table
+    const tbody = document.getElementById('results-tbody');
+    tbody.innerHTML = '';
+    for (let qi = 0; qi < 7; qi++) {
+      const acc = categoryTotal[qi] > 0 ? Math.round((categoryCorrect[qi] / categoryTotal[qi]) * 100) : 0;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td style="text-align:left; font-weight:500;">${CATEGORY_LABELS[qi]}</td>
+        <td>${categoryCorrect[qi]}</td>
+        <td>${categoryTotal[qi]}</td>
+        <td>${acc}%</td>`;
+      tbody.appendChild(tr);
+    }
+
+    // Total row
+    const trTotal = document.createElement('tr');
+    trTotal.style.fontWeight = '700';
+    trTotal.style.background = '#f0f0ff';
+    trTotal.innerHTML = `<td style="text-align:left;">Total</td>
+      <td>${totalCorrect}</td>
+      <td>${totalQuestions}</td>
+      <td>${pct}%</td>`;
+    tbody.appendChild(trTotal);
+
+    showScreen('screen-results');
+  }
+
+  // ── Try Again ──
+  window.tryAgain = function() {
+    showScreen('screen-welcome');
+  };
+
+  // ── Keyboard Shortcuts ──
+  document.addEventListener('keydown', function(e) {
+    // Only active on eval screen
+    if (!document.getElementById('screen-eval').classList.contains('active')) return;
+
+    const key = e.key;
+    const pos = state.currentIdx;
+    const scenario = state.scenarios[state.order[pos]];
+
+    // 1-7: focus question
+    if (key >= '1' && key <= '7') {
+      e.preventDefault();
+      const qi = parseInt(key) - 1;
+      if (qi < scenario.questions.length) {
+        focusQuestion(qi);
+      }
+      return;
+    }
+
+    // A-E: select option for focused question
+    const upper = key.toUpperCase();
+    if (upper >= 'A' && upper <= 'E') {
+      e.preventDefault();
+      const qi = state.focusedQ;
+      const q = scenario.questions[qi];
+      const optIdx = upper.charCodeAt(0) - 65;
+      if (optIdx < q.options.length) {
+        selectOption(pos, qi, upper);
+      }
+      return;
+    }
+
+    // Enter: next scenario
+    if (key === 'Enter') {
+      e.preventDefault();
+      if (!document.getElementById('btn-next').disabled) {
+        nextScenario();
+      }
+      return;
+    }
+  });
+
+  // ── Preload Scenarios ──
+  loadScenarios();
+
+})();
+</script>
+
+</body>
+</html>
