@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -522,11 +523,6 @@ Answer key:  A  A  B  A  C  B  B</code></pre>
   <h2>Configuration Analysis</h2>
   <p>Our systematic evaluation across <strong>270 unique configuration combinations</strong> reveals a <strong>48.2% relative improvement potential</strong> through systematic configuration tuning.</p>
 
-  <div class="figure">
-    <img src="assets/concatenated_4plots_1x4_resolution_time_numimages_presentation.png" alt="Configuration Analysis">
-    <div class="caption">Performance analysis across 4 dimensions. (a) Performance by resolution level, (b) Performance by time interval, (c) Performance by number of images, and (d) Performance by presentation mode. Horizontal lines show human baselines: green for collage-based, blue for GIF-based evaluation. Box plots summarize VLM performance distributions.</div>
-  </div>
-
   <h3>Key Findings</h3>
 
   <details>
@@ -578,6 +574,271 @@ Answer key:  A  A  B  A  C  B  B</code></pre>
       </div>
     </div>
   </details>
+
+  <!-- Interactive Configuration Explorer -->
+  <h3 style="margin-top:2rem;">Interactive Configuration Explorer</h3>
+  <p>Select a model to highlight its performance trend across all five configuration dimensions. The connecting line reveals how each model responds to different settings.</p>
+
+  <div id="interactive-explorer">
+    <div class="explorer-controls">
+      <label for="model-select"><strong>Highlight Model:</strong></label>
+      <select id="model-select"><option value="">Loading...</option></select>
+    </div>
+    <div class="explorer-legend" id="explorer-legend"></div>
+    <div class="explorer-grid">
+      <div id="plot-resolution" class="explorer-plot"></div>
+      <div id="plot-time_interval" class="explorer-plot"></div>
+      <div id="plot-num_images" class="explorer-plot"></div>
+      <div id="plot-presentation_mode" class="explorer-plot"></div>
+    </div>
+    <div id="plot-grid_format" class="explorer-plot explorer-plot-wide"></div>
+  </div>
+
+  <style>
+    #interactive-explorer { margin-top: 1rem; }
+    .explorer-controls {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.75rem; flex-wrap: wrap;
+    }
+    .explorer-controls select {
+      padding: 0.4rem 0.6rem; font-size: 0.95rem;
+      border: 1px solid #ccc; border-radius: 4px;
+      min-width: 260px; font-family: inherit;
+    }
+    .explorer-legend {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-bottom: 1rem; font-size: 0.85rem;
+    }
+    .explorer-legend span {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .legend-swatch {
+      display: inline-block; width: 14px; height: 14px;
+      border-radius: 3px; border: 1px solid #999;
+    }
+    .legend-line {
+      display: inline-block; width: 20px; height: 0;
+      border-top: 3px solid; vertical-align: middle;
+    }
+    .explorer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .explorer-plot { width: 100%; }
+    .explorer-plot-wide { margin-top: 0.5rem; width: 100%; }
+    @media (max-width: 768px) {
+      .explorer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script>
+  (function() {
+    const PLOT_IDS = ['resolution', 'time_interval', 'num_images', 'presentation_mode', 'grid_format'];
+    const PLOT_HEIGHT = 340;
+    const GRID_PLOT_HEIGHT = 380;
+    const HUMAN_COLLAGE_COLOR = '#9B59B6';
+    const HUMAN_GIF_COLOR = '#E67E22';
+
+    let DATA = null;
+
+    fetch('assets/interactive_data.json')
+      .then(r => r.json())
+      .then(data => { DATA = data; init(); })
+      .catch(err => {
+        document.getElementById('model-select').innerHTML = '<option>Error loading data</option>';
+        console.error(err);
+      });
+
+    function init() {
+      buildDropdown();
+      buildLegend();
+      PLOT_IDS.forEach(renderPlot);
+    }
+
+    function buildDropdown() {
+      const sel = document.getElementById('model-select');
+      sel.innerHTML = '<option value="">-- None (show all) --</option>';
+      const byFamily = {};
+      for (const [name, info] of Object.entries(DATA.models)) {
+        (byFamily[info.family] = byFamily[info.family] || []).push({name, label: info.label});
+      }
+      for (const fam of ['claude', 'gemini', 'gpt', 'qwen']) {
+        if (!byFamily[fam]) continue;
+        const og = document.createElement('optgroup');
+        og.label = fam.charAt(0).toUpperCase() + fam.slice(1);
+        byFamily[fam].sort((a,b) => a.label.localeCompare(b.label)).forEach(m => {
+          const opt = document.createElement('option');
+          opt.value = m.name; opt.textContent = m.label;
+          og.appendChild(opt);
+        });
+        sel.appendChild(og);
+      }
+      sel.addEventListener('change', () => PLOT_IDS.forEach(updatePlot));
+    }
+
+    function buildLegend() {
+      const el = document.getElementById('explorer-legend');
+      let html = '';
+      for (const [fam, info] of Object.entries(DATA.families)) {
+        html += `<span><span class="legend-swatch" style="background:${info.color}"></span>${fam.charAt(0).toUpperCase() + fam.slice(1)}</span>`;
+      }
+      html += `<span><span class="legend-line" style="border-color:${HUMAN_COLLAGE_COLOR}"></span>Human (Collage)</span>`;
+      html += `<span><span class="legend-line" style="border-color:${HUMAN_GIF_COLOR};border-style:dashed"></span>Human (GIF)</span>`;
+      el.innerHTML = html;
+    }
+
+    function renderPlot(plotKey) {
+      const plot = DATA.plots[plotKey];
+      const divId = 'plot-' + plotKey;
+      const traces = [];
+
+      // VLM scatter traces
+      for (const [model, vals] of Object.entries(plot.vlm_data)) {
+        const info = DATA.models[model];
+        if (!info) continue;
+        // Filter nulls
+        const xs = [], ys = [];
+        vals.forEach((v, i) => { if (v !== null) { xs.push(plot.xvalues[i]); ys.push(v); } });
+        traces.push({
+          x: xs, y: ys,
+          mode: 'markers',
+          type: 'scatter',
+          name: info.label,
+          text: xs.map(() => info.label),
+          hovertemplate: '%{text}<br>%{x}: %{y:.4f}<extra></extra>',
+          marker: {
+            symbol: info.marker,
+            size: 8,
+            color: info.color,
+            line: { color: '#333', width: 0.5 },
+            opacity: 0.8,
+          },
+          meta: { modelName: model },
+          showlegend: false,
+        });
+      }
+
+      // Human collage baseline
+      if (plot.human_collage.some(v => v !== null)) {
+        const xs = [], ys = [];
+        plot.human_collage.forEach((v, i) => {
+          if (v !== null) { xs.push(plot.xvalues[i]); ys.push(v); }
+        });
+        traces.push({
+          x: xs, y: ys,
+          mode: 'lines',
+          type: 'scatter',
+          name: 'Human (Collage)',
+          line: { color: HUMAN_COLLAGE_COLOR, width: 3, dash: 'solid' },
+          opacity: 0.7,
+          hovertemplate: 'Human (Collage)<br>%{x}: %{y:.4f}<extra></extra>',
+          showlegend: false,
+        });
+      }
+
+      // Human GIF baseline
+      if (plot.human_gif.some(v => v !== null)) {
+        const xs = [], ys = [];
+        plot.human_gif.forEach((v, i) => {
+          if (v !== null) { xs.push(plot.xvalues[i]); ys.push(v); }
+        });
+        traces.push({
+          x: xs, y: ys,
+          mode: 'lines',
+          type: 'scatter',
+          name: 'Human (GIF)',
+          line: { color: HUMAN_GIF_COLOR, width: 3, dash: 'dash' },
+          opacity: 0.7,
+          hovertemplate: 'Human (GIF)<br>%{x}: %{y:.4f}<extra></extra>',
+          showlegend: false,
+        });
+      }
+
+      const isGrid = plotKey === 'grid_format';
+      const layout = {
+        title: { text: plot.title, font: { size: 15 } },
+        xaxis: {
+          title: plot.xlabel,
+          tickvals: plot.xvalues,
+          ticktext: plot.xlabels,
+          tickangle: isGrid ? -45 : 0,
+          tickfont: { size: isGrid ? 9 : 11 },
+        },
+        yaxis: { title: 'Accuracy', rangemode: 'tozero' },
+        height: isGrid ? GRID_PLOT_HEIGHT : PLOT_HEIGHT,
+        margin: { t: 40, b: isGrid ? 80 : 50, l: 55, r: 15 },
+        hovermode: 'closest',
+        plot_bgcolor: '#fafafa',
+      };
+
+      Plotly.newPlot(divId, traces, layout, { responsive: true, displayModeBar: false });
+    }
+
+    function updatePlot(plotKey) {
+      const selected = document.getElementById('model-select').value;
+      const divId = 'plot-' + plotKey;
+      const div = document.getElementById(divId);
+      const plot = DATA.plots[plotKey];
+
+      const update = { 'marker.opacity': [], 'marker.size': [] };
+      const traceIndices = [];
+      let highlightX = [], highlightY = [];
+      let highlightColor = '#333';
+
+      let traceIdx = 0;
+      for (const [model, vals] of Object.entries(plot.vlm_data)) {
+        const info = DATA.models[model];
+        if (!info) continue;
+
+        if (selected && model === selected) {
+          update['marker.opacity'].push(1.0);
+          update['marker.size'].push(12);
+          highlightColor = info.color;
+          // Collect points for line
+          vals.forEach((v, i) => {
+            if (v !== null) { highlightX.push(plot.xvalues[i]); highlightY.push(v); }
+          });
+        } else if (selected) {
+          update['marker.opacity'].push(0.15);
+          update['marker.size'].push(6);
+        } else {
+          update['marker.opacity'].push(0.8);
+          update['marker.size'].push(8);
+        }
+        traceIndices.push(traceIdx);
+        traceIdx++;
+      }
+
+      Plotly.restyle(divId, update, traceIndices);
+
+      // Remove old highlight line if present, then add new one
+      const existingTraces = div.data.length;
+      // Count non-VLM traces (human baselines)
+      const vlmCount = Object.keys(plot.vlm_data).filter(m => DATA.models[m]).length;
+      const baselineCount = existingTraces - vlmCount;
+      // Highlight line is any trace beyond VLM + baselines
+      const expectedBase = vlmCount + (plot.human_collage.some(v => v !== null) ? 1 : 0) +
+                           (plot.human_gif.some(v => v !== null) ? 1 : 0);
+      if (existingTraces > expectedBase) {
+        Plotly.deleteTraces(divId, Array.from({length: existingTraces - expectedBase}, (_, i) => expectedBase + i));
+      }
+
+      if (selected && highlightX.length > 1) {
+        Plotly.addTraces(divId, {
+          x: highlightX, y: highlightY,
+          mode: 'lines',
+          type: 'scatter',
+          line: { color: highlightColor, width: 2.5 },
+          opacity: 0.9,
+          hoverinfo: 'skip',
+          showlegend: false,
+        });
+      }
+    }
+  })();
+  </script>
+
 </section>
 
 <!-- ============================================================ -->
