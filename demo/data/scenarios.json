@@ -161,90 +161,10 @@
   },
   {
     "index": 2,
-    "original_id": 52,
-    "scenario": "The ego vehicle is moving at a very high speed following leading car with deceleration and turning right.",
-    "collage": "assets/collages/scenario_002.jpg",
-    "gif": "assets/gifs/scenario_002.gif",
-    "questions": [
-      {
-        "id": 1,
-        "question": "Is the ego vehicle moving or stationary?",
-        "options": [
-          "A) Moving",
-          "B) Stopping",
-          "C) Stopped",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 2,
-        "question": "What direction is the ego vehicle moving?",
-        "options": [
-          "A) Straight",
-          "B) Left",
-          "C) Right",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 3,
-        "question": "How fast is the ego vehicle moving?",
-        "options": [
-          "A) Very high speed",
-          "B) High speed",
-          "C) Moderate speed",
-          "D) Slowly",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 4,
-        "question": "Is there a car being followed by the ego vehicle?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 5,
-        "question": "Is the ego vehicle accelerating or decelerating?",
-        "options": [
-          "A) Accelerating",
-          "B) Decelerating",
-          "C) Constant speed",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 6,
-        "question": "What color is the traffic light?",
-        "options": [
-          "A) Red",
-          "B) Yellow",
-          "C) Green",
-          "D) No traffic light",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Is the ego vehicle moving along a curve?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      }
-    ],
-    "answer_key": "ACAABDB"
-  },
-  {
-    "index": 3,
     "original_id": 102,
     "scenario": "The ego vehicle is stopping because the traffic light is red.",
-    "collage": "assets/collages/scenario_003.jpg",
-    "gif": "assets/gifs/scenario_003.gif",
+    "collage": "assets/collages/scenario_002.jpg",
+    "gif": "assets/gifs/scenario_002.gif",
     "questions": [
       {
         "id": 1,
@@ -320,91 +240,11 @@
     "answer_key": "BACBCDB"
   },
   {
-    "index": 4,
-    "original_id": 66,
-    "scenario": "The ego vehicle is moving slowly following leading car with acceleration along with the left curve.",
-    "collage": "assets/collages/scenario_004.jpg",
-    "gif": "assets/gifs/scenario_004.gif",
-    "questions": [
-      {
-        "id": 1,
-        "question": "Is the ego vehicle moving or stationary?",
-        "options": [
-          "A) Moving",
-          "B) Stopping",
-          "C) Stopped",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 2,
-        "question": "What direction is the ego vehicle moving?",
-        "options": [
-          "A) Straight",
-          "B) Left",
-          "C) Right",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 3,
-        "question": "How fast is the ego vehicle moving?",
-        "options": [
-          "A) Very high speed",
-          "B) High speed",
-          "C) Moderate speed",
-          "D) Slowly",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 4,
-        "question": "Is there a car being followed by the ego vehicle?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 5,
-        "question": "Is the ego vehicle accelerating or decelerating?",
-        "options": [
-          "A) Accelerating",
-          "B) Decelerating",
-          "C) Constant speed",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 6,
-        "question": "What color is the traffic light?",
-        "options": [
-          "A) Red",
-          "B) Yellow",
-          "C) Green",
-          "D) No traffic light",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Is the ego vehicle moving along a curve?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      }
-    ],
-    "answer_key": "ABDAADA"
-  },
-  {
-    "index": 5,
+    "index": 3,
     "original_id": 18,
     "scenario": "The ego vehicle is moving at a high speed with deceleration along with the right curve.",
-    "collage": "assets/collages/scenario_005.jpg",
-    "gif": "assets/gifs/scenario_005.gif",
+    "collage": "assets/collages/scenario_003.jpg",
+    "gif": "assets/gifs/scenario_003.gif",
     "questions": [
       {
         "id": 1,
@@ -480,11 +320,11 @@
     "answer_key": "ACBBBDA"
   },
   {
-    "index": 6,
+    "index": 4,
     "original_id": 103,
     "scenario": "The ego vehicle is stopping.",
-    "collage": "assets/collages/scenario_006.jpg",
-    "gif": "assets/gifs/scenario_006.gif",
+    "collage": "assets/collages/scenario_004.jpg",
+    "gif": "assets/gifs/scenario_004.gif",
     "questions": [
       {
         "id": 1,
@@ -560,91 +400,11 @@
     "answer_key": "BACBCDB"
   },
   {
-    "index": 7,
-    "original_id": 71,
-    "scenario": "The ego vehicle is moving slowly following leading car with deceleration along with the right curve.",
-    "collage": "assets/collages/scenario_007.jpg",
-    "gif": "assets/gifs/scenario_007.gif",
-    "questions": [
-      {
-        "id": 1,
-        "question": "Is the ego vehicle moving or stationary?",
-        "options": [
-          "A) Moving",
-          "B) Stopping",
-          "C) Stopped",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 2,
-        "question": "What direction is the ego vehicle moving?",
-        "options": [
-          "A) Straight",
-          "B) Left",
-          "C) Right",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 3,
-        "question": "How fast is the ego vehicle moving?",
-        "options": [
-          "A) Very high speed",
-          "B) High speed",
-          "C) Moderate speed",
-          "D) Slowly",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 4,
-        "question": "Is there a car being followed by the ego vehicle?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 5,
-        "question": "Is the ego vehicle accelerating or decelerating?",
-        "options": [
-          "A) Accelerating",
-          "B) Decelerating",
-          "C) Constant speed",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 6,
-        "question": "What color is the traffic light?",
-        "options": [
-          "A) Red",
-          "B) Yellow",
-          "C) Green",
-          "D) No traffic light",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Is the ego vehicle moving along a curve?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      }
-    ],
-    "answer_key": "ACDABDA"
-  },
-  {
-    "index": 8,
+    "index": 5,
     "original_id": 2,
     "scenario": "The ego vehicle is moving at a high speed and turning left.",
-    "collage": "assets/collages/scenario_008.jpg",
-    "gif": "assets/gifs/scenario_008.gif",
+    "collage": "assets/collages/scenario_005.jpg",
+    "gif": "assets/gifs/scenario_005.gif",
     "questions": [
       {
         "id": 1,
@@ -720,11 +480,11 @@
     "answer_key": "ABBBCDB"
   },
   {
-    "index": 9,
+    "index": 6,
     "original_id": 46,
     "scenario": "The ego vehicle is moving at a very high speed following leading car and acceleration.",
-    "collage": "assets/collages/scenario_009.jpg",
-    "gif": "assets/gifs/scenario_009.gif",
+    "collage": "assets/collages/scenario_006.jpg",
+    "gif": "assets/gifs/scenario_006.gif",
     "questions": [
       {
         "id": 1,
@@ -800,91 +560,11 @@
     "answer_key": "AAAAADB"
   },
   {
-    "index": 10,
-    "original_id": 79,
-    "scenario": "The ego vehicle is moving slowly with deceleration along with the right curve.",
-    "collage": "assets/collages/scenario_010.jpg",
-    "gif": "assets/gifs/scenario_010.gif",
-    "questions": [
-      {
-        "id": 1,
-        "question": "Is the ego vehicle moving or stationary?",
-        "options": [
-          "A) Moving",
-          "B) Stopping",
-          "C) Stopped",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 2,
-        "question": "What direction is the ego vehicle moving?",
-        "options": [
-          "A) Straight",
-          "B) Left",
-          "C) Right",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 3,
-        "question": "How fast is the ego vehicle moving?",
-        "options": [
-          "A) Very high speed",
-          "B) High speed",
-          "C) Moderate speed",
-          "D) Slowly",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 4,
-        "question": "Is there a car being followed by the ego vehicle?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 5,
-        "question": "Is the ego vehicle accelerating or decelerating?",
-        "options": [
-          "A) Accelerating",
-          "B) Decelerating",
-          "C) Constant speed",
-          "D) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 6,
-        "question": "What color is the traffic light?",
-        "options": [
-          "A) Red",
-          "B) Yellow",
-          "C) Green",
-          "D) No traffic light",
-          "E) NDA (No Definite Answer)"
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Is the ego vehicle moving along a curve?",
-        "options": [
-          "A) Yes",
-          "B) No",
-          "C) NDA (No Definite Answer)"
-        ]
-      }
-    ],
-    "answer_key": "ACDBBDA"
-  },
-  {
-    "index": 11,
+    "index": 7,
     "original_id": 1,
     "scenario": "The ego vehicle is moving at a high speed along with the right curve.",
-    "collage": "assets/collages/scenario_011.jpg",
-    "gif": "assets/gifs/scenario_011.gif",
+    "collage": "assets/collages/scenario_007.jpg",
+    "gif": "assets/gifs/scenario_007.gif",
     "questions": [
       {
         "id": 1,
@@ -960,11 +640,11 @@
     "answer_key": "ACBBCDA"
   },
   {
-    "index": 12,
+    "index": 8,
     "original_id": 28,
     "scenario": "The ego vehicle is moving at a moderate speed following leading car with acceleration and turning left.",
-    "collage": "assets/collages/scenario_012.jpg",
-    "gif": "assets/gifs/scenario_012.gif",
+    "collage": "assets/collages/scenario_008.jpg",
+    "gif": "assets/gifs/scenario_008.gif",
     "questions": [
       {
         "id": 1,
@@ -1040,11 +720,11 @@
     "answer_key": "ABCAADB"
   },
   {
-    "index": 13,
+    "index": 9,
     "original_id": 93,
     "scenario": "The ego vehicle is moving straight at a very high speed following leading car with deceleration.",
-    "collage": "assets/collages/scenario_013.jpg",
-    "gif": "assets/gifs/scenario_013.gif",
+    "collage": "assets/collages/scenario_009.jpg",
+    "gif": "assets/gifs/scenario_009.gif",
     "questions": [
       {
         "id": 1,
@@ -1120,11 +800,11 @@
     "answer_key": "AAAABDB"
   },
   {
-    "index": 14,
+    "index": 10,
     "original_id": 61,
     "scenario": "The ego vehicle is moving slowly along with the left curve.",
-    "collage": "assets/collages/scenario_014.jpg",
-    "gif": "assets/gifs/scenario_014.gif",
+    "collage": "assets/collages/scenario_010.jpg",
+    "gif": "assets/gifs/scenario_010.gif",
     "questions": [
       {
         "id": 1,
@@ -1200,11 +880,11 @@
     "answer_key": "ABDBCDA"
   },
   {
-    "index": 15,
+    "index": 11,
     "original_id": 4,
     "scenario": "The ego vehicle is moving at a high speed following leading car and acceleration.",
-    "collage": "assets/collages/scenario_015.jpg",
-    "gif": "assets/gifs/scenario_015.gif",
+    "collage": "assets/collages/scenario_011.jpg",
+    "gif": "assets/gifs/scenario_011.gif",
     "questions": [
       {
         "id": 1,
@@ -1280,11 +960,11 @@
     "answer_key": "AABAADB"
   },
   {
-    "index": 16,
+    "index": 12,
     "original_id": 39,
     "scenario": "The ego vehicle is moving at a moderate speed with deceleration along with the right curve.",
-    "collage": "assets/collages/scenario_016.jpg",
-    "gif": "assets/gifs/scenario_016.gif",
+    "collage": "assets/collages/scenario_012.jpg",
+    "gif": "assets/gifs/scenario_012.gif",
     "questions": [
       {
         "id": 1,
@@ -1360,11 +1040,11 @@
     "answer_key": "ACCBBDA"
   },
   {
-    "index": 17,
+    "index": 13,
     "original_id": 42,
     "scenario": "The ego vehicle is moving at a very high speed along with the left curve.",
-    "collage": "assets/collages/scenario_017.jpg",
-    "gif": "assets/gifs/scenario_017.gif",
+    "collage": "assets/collages/scenario_013.jpg",
+    "gif": "assets/gifs/scenario_013.gif",
     "questions": [
       {
         "id": 1,
@@ -1440,9 +1120,329 @@
     "answer_key": "ABABCDA"
   },
   {
+    "index": 14,
+    "original_id": 3,
+    "scenario": "The ego vehicle is moving at a high speed and turning right.",
+    "collage": "assets/collages/scenario_014.jpg",
+    "gif": "assets/gifs/scenario_014.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Is the ego vehicle moving or stationary?",
+        "options": [
+          "A) Moving",
+          "B) Stopping",
+          "C) Stopped",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What direction is the ego vehicle moving?",
+        "options": [
+          "A) Straight",
+          "B) Left",
+          "C) Right",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "How fast is the ego vehicle moving?",
+        "options": [
+          "A) Very high speed",
+          "B) High speed",
+          "C) Moderate speed",
+          "D) Slowly",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Is there a car being followed by the ego vehicle?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is the ego vehicle accelerating or decelerating?",
+        "options": [
+          "A) Accelerating",
+          "B) Decelerating",
+          "C) Constant speed",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What color is the traffic light?",
+        "options": [
+          "A) Red",
+          "B) Yellow",
+          "C) Green",
+          "D) No traffic light",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is the ego vehicle moving along a curve?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "ACBBCDB"
+  },
+  {
+    "index": 15,
+    "original_id": 9,
+    "scenario": "The ego vehicle is moving at a high speed following leading car with deceleration along with the left curve.",
+    "collage": "assets/collages/scenario_015.jpg",
+    "gif": "assets/gifs/scenario_015.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Is the ego vehicle moving or stationary?",
+        "options": [
+          "A) Moving",
+          "B) Stopping",
+          "C) Stopped",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What direction is the ego vehicle moving?",
+        "options": [
+          "A) Straight",
+          "B) Left",
+          "C) Right",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "How fast is the ego vehicle moving?",
+        "options": [
+          "A) Very high speed",
+          "B) High speed",
+          "C) Moderate speed",
+          "D) Slowly",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Is there a car being followed by the ego vehicle?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is the ego vehicle accelerating or decelerating?",
+        "options": [
+          "A) Accelerating",
+          "B) Decelerating",
+          "C) Constant speed",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What color is the traffic light?",
+        "options": [
+          "A) Red",
+          "B) Yellow",
+          "C) Green",
+          "D) No traffic light",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is the ego vehicle moving along a curve?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "ABBABDA"
+  },
+  {
+    "index": 16,
+    "original_id": 10,
+    "scenario": "The ego vehicle is moving at a high speed following leading car with deceleration along with the right curve.",
+    "collage": "assets/collages/scenario_016.jpg",
+    "gif": "assets/gifs/scenario_016.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Is the ego vehicle moving or stationary?",
+        "options": [
+          "A) Moving",
+          "B) Stopping",
+          "C) Stopped",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What direction is the ego vehicle moving?",
+        "options": [
+          "A) Straight",
+          "B) Left",
+          "C) Right",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "How fast is the ego vehicle moving?",
+        "options": [
+          "A) Very high speed",
+          "B) High speed",
+          "C) Moderate speed",
+          "D) Slowly",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Is there a car being followed by the ego vehicle?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is the ego vehicle accelerating or decelerating?",
+        "options": [
+          "A) Accelerating",
+          "B) Decelerating",
+          "C) Constant speed",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What color is the traffic light?",
+        "options": [
+          "A) Red",
+          "B) Yellow",
+          "C) Green",
+          "D) No traffic light",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is the ego vehicle moving along a curve?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "ACBABDA"
+  },
+  {
+    "index": 17,
+    "original_id": 13,
+    "scenario": "The ego vehicle is moving at a high speed with acceleration along with the left curve.",
+    "collage": "assets/collages/scenario_017.jpg",
+    "gif": "assets/gifs/scenario_017.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Is the ego vehicle moving or stationary?",
+        "options": [
+          "A) Moving",
+          "B) Stopping",
+          "C) Stopped",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What direction is the ego vehicle moving?",
+        "options": [
+          "A) Straight",
+          "B) Left",
+          "C) Right",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "How fast is the ego vehicle moving?",
+        "options": [
+          "A) Very high speed",
+          "B) High speed",
+          "C) Moderate speed",
+          "D) Slowly",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Is there a car being followed by the ego vehicle?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is the ego vehicle accelerating or decelerating?",
+        "options": [
+          "A) Accelerating",
+          "B) Decelerating",
+          "C) Constant speed",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What color is the traffic light?",
+        "options": [
+          "A) Red",
+          "B) Yellow",
+          "C) Green",
+          "D) No traffic light",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is the ego vehicle moving along a curve?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "ABBBADA"
+  },
+  {
     "index": 18,
-    "original_id": 65,
-    "scenario": "The ego vehicle is moving slowly following leading car and acceleration.",
+    "original_id": 17,
+    "scenario": "The ego vehicle is moving at a high speed with deceleration along with the left curve.",
     "collage": "assets/collages/scenario_018.jpg",
     "gif": "assets/gifs/scenario_018.gif",
     "questions": [
@@ -1517,12 +1517,12 @@
         ]
       }
     ],
-    "answer_key": "AADAADB"
+    "answer_key": "ABBBBDA"
   },
   {
     "index": 19,
-    "original_id": 3,
-    "scenario": "The ego vehicle is moving at a high speed and turning right.",
+    "original_id": 20,
+    "scenario": "The ego vehicle is moving at a high speed with deceleration and turning right.",
     "collage": "assets/collages/scenario_019.jpg",
     "gif": "assets/gifs/scenario_019.gif",
     "questions": [
@@ -1597,6 +1597,6 @@
         ]
       }
     ],
-    "answer_key": "ACBBCDB"
+    "answer_key": "ACBBBDB"
   }
 ]

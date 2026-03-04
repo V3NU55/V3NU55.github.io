@@ -22,8 +22,8 @@ from collections import Counter
 # Configuration
 # ============================================================================
 
-SCENARIO_ANNOTATIONS = Path("/home/hiwi/VENUSS_code/datasets/covla/scenario_annotations.json")
-FRAME_METADATA_CSV = Path("/home/hiwi/VENUSS_code/datasets/covla/frame_extraction_metadata.csv")
+SCENARIO_ANNOTATIONS = Path("/home/hiwi/VENUSS/datasets/covla/scenario_annotations.json")
+FRAME_METADATA_CSV = Path("/home/hiwi/VENUSS/datasets/covla/frame_extraction_metadata.csv")
 VIDEO_DIR = Path("/home/siyanli/CoVLA-Dataset/videos")
 
 OUTPUT_DIR = Path(__file__).parent / "demo"
@@ -32,7 +32,7 @@ GIF_DIR = OUTPUT_DIR / "assets" / "gifs"
 DATA_DIR = OUTPUT_DIR / "data"
 
 NUM_SCENARIOS = 20
-NUM_FRAMES = 4
+NUM_FRAMES = 8
 INTERVAL_NAME = "500ms"
 FRAME_SKIP = 9  # 500ms at 20fps => skip 9 frames
 
@@ -171,7 +171,7 @@ def find_video_and_frames(metadata_rows):
 # ============================================================================
 
 def create_collage(frames, output_path):
-    """Create a 1x4 horizontal collage at 960x540 per frame."""
+    """Create a 1x8 horizontal collage at 960x540 per frame."""
     resized = []
     for frame in frames:
         r = cv2.resize(frame, (COLLAGE_FRAME_W, COLLAGE_FRAME_H), interpolation=cv2.INTER_AREA)

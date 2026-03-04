@@ -1,0 +1,3602 @@
+[
+  {
+    "index": 0,
+    "original_id": 27,
+    "scenario": "Approaching Intersection (3 way)",
+    "collage": "assets/collages_hsd/scenario_000.jpg",
+    "gif": "assets/gifs_hsd/scenario_000.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAAAAECBBBBBBAA"
+  },
+  {
+    "index": 1,
+    "original_id": 2,
+    "scenario": "Approaching Construction zone",
+    "collage": "assets/collages_hsd/scenario_001.jpg",
+    "gif": "assets/gifs_hsd/scenario_001.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFA"
+  },
+  {
+    "index": 2,
+    "original_id": 27,
+    "scenario": "Approaching Intersection (3 way)",
+    "collage": "assets/collages_hsd/scenario_002.jpg",
+    "gif": "assets/gifs_hsd/scenario_002.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAAAAECBBBBBBAA"
+  },
+  {
+    "index": 3,
+    "original_id": 562,
+    "scenario": "Passing Rail crossing",
+    "collage": "assets/collages_hsd/scenario_003.jpg",
+    "gif": "assets/gifs_hsd/scenario_003.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBBBBBHC"
+  },
+  {
+    "index": 4,
+    "original_id": 483,
+    "scenario": "Passing Construction zone",
+    "collage": "assets/collages_hsd/scenario_004.jpg",
+    "gif": "assets/gifs_hsd/scenario_004.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFC"
+  },
+  {
+    "index": 5,
+    "original_id": 480,
+    "scenario": "Entering Rail crossing",
+    "collage": "assets/collages_hsd/scenario_005.jpg",
+    "gif": "assets/gifs_hsd/scenario_005.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBBBBBHB"
+  },
+  {
+    "index": 6,
+    "original_id": 480,
+    "scenario": "Entering Rail crossing",
+    "collage": "assets/collages_hsd/scenario_006.jpg",
+    "gif": "assets/gifs_hsd/scenario_006.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBBBBBHB"
+  },
+  {
+    "index": 7,
+    "original_id": 403,
+    "scenario": "Entering Construction zone",
+    "collage": "assets/collages_hsd/scenario_007.jpg",
+    "gif": "assets/gifs_hsd/scenario_007.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFB"
+  },
+  {
+    "index": 8,
+    "original_id": 561,
+    "scenario": "Passing Overhead bridge/under overpass",
+    "collage": "assets/collages_hsd/scenario_008.jpg",
+    "gif": "assets/gifs_hsd/scenario_008.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDEABBBBBBEC"
+  },
+  {
+    "index": 9,
+    "original_id": 403,
+    "scenario": "Entering Construction zone",
+    "collage": "assets/collages_hsd/scenario_009.jpg",
+    "gif": "assets/gifs_hsd/scenario_009.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFB"
+  },
+  {
+    "index": 10,
+    "original_id": 483,
+    "scenario": "Passing Construction zone",
+    "collage": "assets/collages_hsd/scenario_010.jpg",
+    "gif": "assets/gifs_hsd/scenario_010.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFC"
+  },
+  {
+    "index": 11,
+    "original_id": 80,
+    "scenario": "Approaching Overhead bridge/under overpass",
+    "collage": "assets/collages_hsd/scenario_011.jpg",
+    "gif": "assets/gifs_hsd/scenario_011.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDEABBBBBBEA"
+  },
+  {
+    "index": 12,
+    "original_id": 403,
+    "scenario": "Entering Construction zone",
+    "collage": "assets/collages_hsd/scenario_012.jpg",
+    "gif": "assets/gifs_hsd/scenario_012.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFB"
+  },
+  {
+    "index": 13,
+    "original_id": 81,
+    "scenario": "Approaching Rail crossing",
+    "collage": "assets/collages_hsd/scenario_013.jpg",
+    "gif": "assets/gifs_hsd/scenario_013.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBBBBBHA"
+  },
+  {
+    "index": 14,
+    "original_id": 428,
+    "scenario": "Entering Intersection (3 way)",
+    "collage": "assets/collages_hsd/scenario_014.jpg",
+    "gif": "assets/gifs_hsd/scenario_014.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAAAAECBBBBBBAB"
+  },
+  {
+    "index": 15,
+    "original_id": 80,
+    "scenario": "Approaching Overhead bridge/under overpass",
+    "collage": "assets/collages_hsd/scenario_015.jpg",
+    "gif": "assets/gifs_hsd/scenario_015.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDEABBBBBBEA"
+  },
+  {
+    "index": 16,
+    "original_id": 483,
+    "scenario": "Passing Construction zone",
+    "collage": "assets/collages_hsd/scenario_016.jpg",
+    "gif": "assets/gifs_hsd/scenario_016.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDECBBABBBFC"
+  },
+  {
+    "index": 17,
+    "original_id": 479,
+    "scenario": "Entering Overhead bridge/under overpass",
+    "collage": "assets/collages_hsd/scenario_017.jpg",
+    "gif": "assets/gifs_hsd/scenario_017.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAADDEABBBBBBEB"
+  },
+  {
+    "index": 18,
+    "original_id": 3,
+    "scenario": "Approaching Construction zone on highway road in cloudy weather on dry surface",
+    "collage": "assets/collages_hsd/scenario_018.jpg",
+    "gif": "assets/gifs_hsd/scenario_018.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "BBAADDECBBABBBFA"
+  },
+  {
+    "index": 19,
+    "original_id": 508,
+    "scenario": "Passing Intersection (3 way)",
+    "collage": "assets/collages_hsd/scenario_019.jpg",
+    "gif": "assets/gifs_hsd/scenario_019.gif",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What type of road environment is this?",
+        "options": [
+          "A) Local",
+          "B) Highway",
+          "C) Ramp",
+          "D) Urban",
+          "E) Rural",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What are the current weather conditions?",
+        "options": [
+          "A) Sunny",
+          "B) Cloudy",
+          "C) Rain",
+          "D) Snow",
+          "E) Fog",
+          "F) Hail",
+          "G) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the road surface condition?",
+        "options": [
+          "A) Dry",
+          "B) Wet",
+          "C) Icy",
+          "D) Snow",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 4,
+        "question": "What is the lighting/time of day?",
+        "options": [
+          "A) Day",
+          "B) Dawn/Dusk",
+          "C) Night",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Is there an intersection present in this scene?",
+        "options": [
+          "A) Yes, 3-way",
+          "B) Yes, 4-way",
+          "C) Yes, 5+ way",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What type of traffic control exists at the intersection (if present)?",
+        "options": [
+          "A) Traffic lights",
+          "B) Stop sign",
+          "C) No signal",
+          "D) No intersection",
+          "E) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Is there a merge or branch scenario visible?",
+        "options": [
+          "A) Merge - gore on left",
+          "B) Merge - gore on right",
+          "C) Branch - gore on left",
+          "D) Branch - gore on right",
+          "E) No merge/branch",
+          "F) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Is there a bridge or overpass in this scene?",
+        "options": [
+          "A) Yes - overhead bridge",
+          "B) Yes - under overpass",
+          "C) No",
+          "D) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Is there a railway crossing visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Is there a tunnel in this scene?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Is there a construction zone visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Is there a zebra crossing (marked pedestrian crossing) visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Is there a regular crosswalk visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Is there a driveway entrance/exit visible?",
+        "options": [
+          "A) Yes",
+          "B) No",
+          "C) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 15,
+        "question": "What is the primary road scenario in this scene?",
+        "options": [
+          "A) Intersection",
+          "B) Merge/Branch",
+          "C) Railway crossing",
+          "D) Tunnel",
+          "E) Bridge/Overpass",
+          "F) Construction zone",
+          "G) Zebra crossing",
+          "H) Regular road",
+          "I) NDA (No Definite Answer)"
+        ]
+      },
+      {
+        "id": 16,
+        "question": "What is the vehicle's position relative to the primary scenario?",
+        "options": [
+          "A) Approaching",
+          "B) Entering/At",
+          "C) Passing/Exiting",
+          "D) No special scenario",
+          "E) NDA (No Definite Answer)"
+        ]
+      }
+    ],
+    "answer_key": "AAAAAAECBBBBBBAC"
+  }
+]
