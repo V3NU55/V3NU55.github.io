@@ -421,15 +421,15 @@
   <p>The annotation system transforms natural language descriptions into structured answer keys. For example:</p>
   <pre><code>Caption:  "The ego vehicle is moving straight at a high speed"
 
-Answer key:  A  A  B  A  C  B  B
-             |  |  |  |  |  |  |
+             +-------------------- Motion: Moving (A)
+             |  +----------------- Direction: Straight (A)
+             |  |  +-------------- Speed: High speed (B)
+             |  |  |  +----------- Following: Not following (A)
+             |  |  |  |  +-------- Acceleration: No acceleration (C)
+             |  |  |  |  |  +----- Traffic Light: No traffic light (B)
              |  |  |  |  |  |  +-- Curve: No curve (B)
-             |  |  |  |  |  +---- Traffic Light: No traffic light (B)
-             |  |  |  |  +------- Acceleration: No acceleration (C)
-             |  |  |  +---------- Following: Not following (A)
-             |  |  +------------- Speed: High speed (B)
-             |  +---------------- Direction: Straight (A)
-             +------------------- Motion: Moving (A)</code></pre>
+             |  |  |  |  |  |  |
+Answer key:  A  A  B  A  C  B  B</code></pre>
 </section>
 
 <!-- ============================================================ -->
