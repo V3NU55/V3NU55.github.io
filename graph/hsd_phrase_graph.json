@@ -1,0 +1,153 @@
+{
+  "nodes": [
+    { "id": 0, "text": "The ego vehicle is", "category": "root" },
+
+    { "id": 1, "text": "Approaching", "category": "temporal" },
+    { "id": 2, "text": "Driving", "category": "temporal" },
+    { "id": 3, "text": "Entering", "category": "temporal" },
+    { "id": 4, "text": "Passing", "category": "temporal" },
+
+    { "id": 10, "text": "Branch GoreOnLeft", "category": "place" },
+    { "id": 11, "text": "Branch GoreOnRight", "category": "place" },
+    { "id": 12, "text": "Construction zone", "category": "place" },
+    { "id": 13, "text": "Intersection (3 way)", "category": "place" },
+    { "id": 14, "text": "Intersection (4 way)", "category": "place" },
+    { "id": 15, "text": "Intersection (5 way & more)", "category": "place" },
+    { "id": 16, "text": "Merge GoreOnLeft", "category": "place" },
+    { "id": 17, "text": "Merge GoreOnRight", "category": "place" },
+    { "id": 18, "text": "Overhead bridge/\nunder overpass", "category": "place" },
+    { "id": 19, "text": "Rail crossing", "category": "place" },
+    { "id": 20, "text": "ZebraCrossing", "category": "place" },
+
+    { "id": 30, "text": "on ... road", "category": "connector" },
+
+    { "id": 31, "text": "highway", "category": "road" },
+    { "id": 32, "text": "local", "category": "road" },
+    { "id": 33, "text": "ramp", "category": "road" },
+    { "id": 34, "text": "rural", "category": "road" },
+    { "id": 35, "text": "urban", "category": "road" },
+
+    { "id": 40, "text": "in ... weather", "category": "connector" },
+
+    { "id": 41, "text": "cloudy", "category": "weather" },
+    { "id": 42, "text": "fog", "category": "weather" },
+    { "id": 43, "text": "hail", "category": "weather" },
+    { "id": 44, "text": "rain", "category": "weather" },
+    { "id": 45, "text": "snow", "category": "weather" },
+    { "id": 46, "text": "sunny", "category": "weather" },
+
+    { "id": 50, "text": "on ... surface", "category": "connector" },
+
+    { "id": 51, "text": "dry", "category": "surface" },
+    { "id": 52, "text": "icy", "category": "surface" },
+    { "id": 53, "text": "snow", "category": "surface" },
+    { "id": 54, "text": "wet", "category": "surface" },
+
+    { "id": 60, "text": "during ...", "category": "connector" },
+
+    { "id": 61, "text": "dawn or dusk", "category": "lighting" },
+    { "id": 62, "text": "day", "category": "lighting" },
+    { "id": 63, "text": "night", "category": "lighting" },
+
+    { "id": 99, "text": ".", "category": "end" }
+  ],
+  "connections": [
+    { "from": 0, "to": 1 },
+    { "from": 0, "to": 2 },
+    { "from": 0, "to": 3 },
+    { "from": 0, "to": 4 },
+
+    { "from": 1, "to": 10 },
+    { "from": 1, "to": 11 },
+    { "from": 1, "to": 12 },
+    { "from": 1, "to": 13 },
+    { "from": 1, "to": 14 },
+    { "from": 1, "to": 15 },
+    { "from": 1, "to": 16 },
+    { "from": 1, "to": 17 },
+    { "from": 1, "to": 18 },
+    { "from": 1, "to": 19 },
+    { "from": 1, "to": 20 },
+
+    { "from": 3, "to": 12 },
+    { "from": 3, "to": 13 },
+    { "from": 3, "to": 14 },
+    { "from": 3, "to": 15 },
+    { "from": 3, "to": 18 },
+    { "from": 3, "to": 19 },
+
+    { "from": 4, "to": 10 },
+    { "from": 4, "to": 11 },
+    { "from": 4, "to": 12 },
+    { "from": 4, "to": 13 },
+    { "from": 4, "to": 14 },
+    { "from": 4, "to": 15 },
+    { "from": 4, "to": 16 },
+    { "from": 4, "to": 17 },
+    { "from": 4, "to": 18 },
+    { "from": 4, "to": 19 },
+
+    { "from": 2, "to": 30 },
+    { "from": 12, "to": 30 },
+    { "from": 13, "to": 30 },
+    { "from": 14, "to": 30 },
+
+    { "from": 10, "to": 99 },
+    { "from": 11, "to": 99 },
+    { "from": 15, "to": 99 },
+    { "from": 16, "to": 99 },
+    { "from": 17, "to": 99 },
+    { "from": 18, "to": 99 },
+    { "from": 19, "to": 99 },
+    { "from": 20, "to": 99 },
+
+    { "from": 30, "to": 31 },
+    { "from": 30, "to": 32 },
+    { "from": 30, "to": 33 },
+    { "from": 30, "to": 34 },
+    { "from": 30, "to": 35 },
+
+    { "from": 31, "to": 40 },
+    { "from": 32, "to": 40 },
+    { "from": 33, "to": 40 },
+    { "from": 34, "to": 40 },
+    { "from": 35, "to": 40 },
+
+    { "from": 40, "to": 41 },
+    { "from": 40, "to": 42 },
+    { "from": 40, "to": 43 },
+    { "from": 40, "to": 44 },
+    { "from": 40, "to": 45 },
+    { "from": 40, "to": 46 },
+
+    { "from": 41, "to": 50 },
+    { "from": 42, "to": 50 },
+    { "from": 43, "to": 50 },
+    { "from": 44, "to": 50 },
+    { "from": 45, "to": 50 },
+    { "from": 46, "to": 50 },
+
+    { "from": 50, "to": 51 },
+    { "from": 50, "to": 52 },
+    { "from": 50, "to": 53 },
+    { "from": 50, "to": 54 },
+
+    { "from": 51, "to": 60 },
+    { "from": 52, "to": 60 },
+    { "from": 53, "to": 60 },
+    { "from": 54, "to": 60 },
+
+    { "from": 51, "to": 99 },
+    { "from": 52, "to": 99 },
+    { "from": 53, "to": 99 },
+    { "from": 54, "to": 99 },
+
+    { "from": 60, "to": 61 },
+    { "from": 60, "to": 62 },
+    { "from": 60, "to": 63 },
+
+    { "from": 61, "to": 99 },
+    { "from": 62, "to": 99 },
+    { "from": 63, "to": 99 }
+  ]
+}

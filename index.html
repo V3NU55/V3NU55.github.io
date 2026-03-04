@@ -405,10 +405,42 @@
 <!-- ============================================================ -->
 <section id="annotations">
   <h2>Annotation Categories</h2>
-  <div class="figure">
+
+  <!-- Dataset graph toggle -->
+  <div style="display:flex;gap:0.4rem;margin-bottom:1rem;">
+    <button class="btn-pill btn-dark" id="graph-btn-covla" onclick="showGraph('covla')" style="font-size:0.82rem;padding:0.4rem 1rem;">CoVLA</button>
+    <button class="btn-pill" id="graph-btn-hsd" onclick="showGraph('hsd')" style="font-size:0.82rem;padding:0.4rem 1rem;background:#e8e8e8;color:#555;">Honda Scenes</button>
+  </div>
+
+  <div class="figure" id="graph-covla">
     <img src="assets/phrase_graph_new.png" alt="CoVLA Category Visualization">
     <div class="caption">Visualization of all CoVLA textual descriptions automatically categorized by VENUSS. The framework identified seven categories: motion types (blue), velocity descriptors (yellow), directional behaviors (orange), acceleration patterns (purple), following behavior (dark green), traffic light conditions (light red), and road curvature detection (gray).</div>
   </div>
+
+  <div class="figure" id="graph-hsd" style="display:none;">
+    <img src="assets/hsd_phrase_graph.png" alt="HSD Category Visualization">
+    <div class="caption">Visualization of all Honda Scenes textual descriptions automatically categorized by VENUSS. The framework identified six categories: temporal states (blue), place types (orange), road types (gold), weather conditions (plum), surface conditions (coral), and ambient lighting (green). Gray connector nodes show the grammatical structure. Dashed edges indicate sentence termination points.</div>
+  </div>
+
+  <script>
+  function showGraph(ds) {
+    document.getElementById('graph-covla').style.display = ds === 'covla' ? '' : 'none';
+    document.getElementById('graph-hsd').style.display = ds === 'hsd' ? '' : 'none';
+    var btnC = document.getElementById('graph-btn-covla');
+    var btnH = document.getElementById('graph-btn-hsd');
+    if (ds === 'covla') {
+      btnC.className = 'btn-pill btn-dark';
+      btnH.className = 'btn-pill';
+      btnH.style.background = '#e8e8e8'; btnH.style.color = '#555';
+      btnC.style.background = ''; btnC.style.color = '';
+    } else {
+      btnH.className = 'btn-pill btn-dark';
+      btnC.className = 'btn-pill';
+      btnC.style.background = '#e8e8e8'; btnC.style.color = '#555';
+      btnH.style.background = ''; btnH.style.color = '';
+    }
+  }
+  </script>
 
   <h3>Human Evaluation</h3>
 
