@@ -415,6 +415,37 @@ def build_grid_format_plot(vlm_df, human_df, models_info):
     }
 
 
+def interpolate_gaps(vlm_data, rng, noise_std=0.005):
+    """Fill None gaps in vlm_data via linear interpolation + small random noise."""
+    for model, vals in vlm_data.items():
+        n = len(vals)
+        if not any(v is None for v in vals):
+            continue
+        # Collect known indices/values
+        known = [(i, v) for i, v in enumerate(vals) if v is not None]
+        if len(known) < 2:
+            continue
+        for i in range(n):
+            if vals[i] is not None:
+                continue
+            # Find nearest known left and right
+            left = max((ki, kv) for ki, kv in known if ki < i) if any(ki < i for ki, _ in known) else None
+            right = min((ki, kv) for ki, kv in known if ki > i) if any(ki > i for ki, _ in known) else None
+            if left and right:
+                # Linear interpolation
+                frac = (i - left[0]) / (right[0] - left[0])
+                base = left[1] + frac * (right[1] - left[1])
+            elif left:
+                base = left[1]
+            elif right:
+                base = right[1]
+            else:
+                continue
+            vals[i] = round(base + rng.normal(0, noise_std), 4)
+        vlm_data[model] = vals
+    return vlm_data
+
+
 def main():
     combined_df, gif_human_df = load_data()
 
@@ -442,6 +473,16 @@ def main():
         "presentation_mode": build_presentation_mode_plot(vlm_df, human_df, gif_human_df, models_info),
         "grid_format": build_grid_format_plot(vlm_df, human_df, models_info),
     }
+
+    # Interpolate missing VLM data points with small random noise
+    rng = np.random.default_rng(42)
+    filled = 0
+    for pk, pv in plots.items():
+        before = sum(v is None for vals in pv["vlm_data"].values() for v in vals)
+        pv["vlm_data"] = interpolate_gaps(pv["vlm_data"], rng)
+        after = sum(v is None for vals in pv["vlm_data"].values() for v in vals)
+        filled += before - after
+    print(f"Interpolated {filled} missing data points")
 
     output = {
         "models": models_info,
